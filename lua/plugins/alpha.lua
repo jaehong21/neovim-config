@@ -29,7 +29,6 @@ return {
           "",
           "",
           "",
-
       }
 
       -- set menu items
