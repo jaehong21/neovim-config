@@ -15,7 +15,7 @@ opt.smartcase = true
 
 -- visual
 opt.number = true
-opt.relativenumber = false
+opt.relativenumber = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
 

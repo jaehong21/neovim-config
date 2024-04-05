@@ -7,20 +7,24 @@ return {
     "MunifTanjim/nui.nvim",
     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
-  opts = {
-    filesystem = {
-      filtered_items = {
-        visible = true,
-        show_hidden_count = true,
-        hide_dotfiles = false,
-        hide_gitignored = true,
-        hide_by_name = {
-           -- '.git',
-           -- '.DS_Store',
-           -- 'thumbs.db',
-        },
-        never_show = {},
+  config = function()
+    require('neo-tree').setup({
+      window = {
+        position = 'left',
+        width = 35,
       },
-    }
-  }
+      filesystem = {
+        filtered_items = {
+          visible = false,
+          always_show = {
+            ".gitignore",
+            ".github",
+            ".circleci",
+            ".pre-commit-config.yaml",
+          }
+        }
+      },
+    })
+  end,
+  opts = {},
 }

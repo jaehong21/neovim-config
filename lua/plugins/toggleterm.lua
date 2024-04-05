@@ -7,8 +7,8 @@ return {
       direction = 'horizontal',
       size = 18,
     })
-    -- vim.keymap.set({ "n", "t" }, "<leader>t", "<CMD>ToggleTerm<CR>", { noremap = true, silent = true })
-    vim.keymap.set({ "n", "t" }, "J", "<CMD>ToggleTerm<CR>", { noremap = true, silent = true })
+    vim.keymap.set({ "n", "t" }, "<leader>j", "<CMD>ToggleTerm<CR>", { noremap = true, silent = true })
+    -- vim.keymap.set({ "n", "t" }, "J", "<CMD>ToggleTerm<CR>", { noremap = true, silent = true })
 
     local Terminal = require('toggleterm.terminal').Terminal
     local lazygit  = Terminal:new({ cmd = "lazygit", hidden = true, direction = "float" })

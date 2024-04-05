@@ -10,6 +10,9 @@ mapKey('<C-k>', '<C-w>k') -- Up
 mapKey('<C-l>', '<C-w>l') -- Right
 mapKey('<leader>fq', ':close', 'n') -- Close pane
 
+mapKey('<S-h>', '<Cmd>bprev<CR>', 'n') -- Previous buffer
+mapKey('<S-l>', '<Cmd>bnext<CR>', 'n') -- Next buffer
+
 mapKey('<leader>fr', ':Neotree reveal<CR>', 'n') -- Reveal current file in neotree
 mapKey('<leader><leader>', '<C-^>') -- Move to last buffer
 
