@@ -25,31 +25,66 @@ return {
 			require("mason-lspconfig").setup({
 				-- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
 				ensure_installed = {
-					"lua_ls",
-					"marksman",
-					"jsonls",
-					"yamlls",
-					"bashls",
-					"autotools_ls",
 					"tsserver",
-					"gopls",
+					--
 					"pylsp",
-					"jdtls",
+					"gopls",
+					"clangd",
+					"jdtls", -- Java
 					"gradle_ls",
 					"rust_analyzer",
+					--
 					"terraformls",
 					"dockerls",
+					"helm_ls",
+					--
+					"lua_ls",
+					"marksman",
+					"yamlls",
+					"jsonls",
+					"bashls",
+					"autotools_ls", -- Makefile
 				},
 			})
 		end,
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = {
+			-- https://github.com/mrjosh/helm-ls/blob/master/examples/nvim/init.lua
+			"towolf/vim-helm",
+			ft = "helm",
+		},
 		config = function()
+			keyMapper("K", vim.lsp.buf.hover)
+			keyMapper("gd", vim.lsp.buf.definition)
+			keyMapper("<leader>ca", vim.lsp.buf.code_action)
+
 			local lspconfig = require("lspconfig")
+
+			lspconfig.tsserver.setup({})
+			--
+			lspconfig.pylsp.setup({})
+			lspconfig.gopls.setup({})
+			lspconfig.clangd.setup({})
+			lspconfig.jdtls.setup({})
+			lspconfig.gradle_ls.setup({})
+			lspconfig.rust_analyzer.setup({})
+			--
+			lspconfig.terraformls.setup({})
+			lspconfig.dockerls.setup({})
+			lspconfig.helm_ls.setup({
+				settings = {
+					["helm-ls"] = {
+						yamlls = {
+							path = "yaml-language-server",
+						},
+					},
+				},
+			})
+			--
 			lspconfig.lua_ls.setup({})
 			lspconfig.marksman.setup({})
-			lspconfig.jsonls.setup({})
 			lspconfig.yamlls.setup({
 				settings = {
 					yaml = {
@@ -59,22 +94,9 @@ return {
 					},
 				},
 			})
+			lspconfig.jsonls.setup({})
 			lspconfig.bashls.setup({})
 			lspconfig.autotools_ls.setup({})
-
-			lspconfig.tsserver.setup({})
-			lspconfig.gopls.setup({})
-			lspconfig.pylsp.setup({})
-			lspconfig.jdtls.setup({})
-			lspconfig.gradle_ls.setup({})
-			lspconfig.rust_analyzer.setup({})
-
-			lspconfig.terraformls.setup({})
-			lspconfig.dockerls.setup({})
-
-			keyMapper("K", vim.lsp.buf.hover)
-			keyMapper("gd", vim.lsp.buf.definition)
-			keyMapper("<leader>ca", vim.lsp.buf.code_action)
 		end,
 	},
 }

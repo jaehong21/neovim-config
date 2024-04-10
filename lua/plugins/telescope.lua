@@ -47,7 +47,7 @@ return {
 				},
 			})
 			require("telescope").load_extension("ui-select")
-			require("telescope").load_extension("notify")
+			require("telescope").load_extension("noice")
 
 			local builtin = require("telescope.builtin")
 			-- local M = {}
