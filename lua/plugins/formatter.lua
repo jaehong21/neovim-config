@@ -18,8 +18,10 @@ return {
 					"rustfmt",
 					--
 					"tflint",
+					"tfsec",
 					--
 					"luacheck",
+					"nixpkgs-fmt",
 					"stylua",
 					"markdownlint",
 					"yamllint",
@@ -44,7 +46,7 @@ return {
 				python = { "pylint" },
 				go = { "golangcilint" },
 				--
-				terraform = { "tflint" },
+				terraform = { "tflint", "tfsec" },
 				--
 				-- lua = { "luacheck" },
 				markdown = { "markdownlint" },
@@ -90,9 +92,10 @@ return {
 					cpp = { "clang-format" },
 					rust = { "rustfmt" },
 					--
-					-- terraform = { "terraform_fmt" },
+					terraform = { "terraform_fmt" },
 					--
 					lua = { "stylua" },
+					nix = { "nixpkgs_fmt" },
 					markdown = { "prettier" },
 					yaml = { "prettier" },
 					json = { "prettier" },

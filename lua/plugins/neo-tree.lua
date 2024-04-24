@@ -26,6 +26,7 @@ return {
 						always_show = {
 							".gitignore",
 							".github",
+							".gitea",
 							".circleci",
 							".pre-commit-config.yaml",
 							".goreleaser.yaml",

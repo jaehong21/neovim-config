@@ -22,8 +22,12 @@ return {
 			k9s:toggle()
 		end, { noremap = true, silent = true, desc = "[K][9]s" })
 
-		local gitui = Terminal:new({ cmd = "gitui", hidden = true, direction = "float" })
+		local hibiscus = Terminal:new({ cmd = "hibiscus", hidden = true, direction = "float" })
+		vim.keymap.set({ "n", "t" }, "<leader>hb", function()
+			hibiscus:toggle()
+		end, { noremap = true, silent = true, desc = "[H]i[B]ibiscus" })
 
+		local gitui = Terminal:new({ cmd = "gitui", hidden = true, direction = "float" })
 		vim.keymap.set({ "n", "t" }, "<leader>gu", function()
 			gitui:toggle()
 		end, { noremap = true, silent = true, desc = "[G]it[U]i" })

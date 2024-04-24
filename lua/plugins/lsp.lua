@@ -39,6 +39,7 @@ return {
 					"helm_ls",
 					--
 					"lua_ls",
+					"nil_ls",
 					"marksman",
 					"yamlls",
 					"jsonls",
@@ -84,12 +85,15 @@ return {
 			})
 			--
 			lspconfig.lua_ls.setup({})
+			lspconfig.nil_ls.setup({})
 			lspconfig.marksman.setup({})
 			lspconfig.yamlls.setup({
 				settings = {
 					yaml = {
 						schemas = {
+							kubernetes = "globPattern",
 							["https://json.schemastore.org/github-workflow.json"] = "/.*/workflows/*",
+							["https://goreleaser.com/static/schema.json"] = ".goreleaser.yaml",
 						},
 					},
 				},
