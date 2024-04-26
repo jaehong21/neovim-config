@@ -7,6 +7,7 @@ return {
 				ensure_installed = {
 					"prettier",
 					"eslint",
+					"htmlbeautifier",
 					--
 					"pylint",
 					"black",
@@ -21,7 +22,6 @@ return {
 					"tfsec",
 					--
 					"luacheck",
-					"nixpkgs-fmt",
 					"stylua",
 					"markdownlint",
 					"yamllint",
@@ -38,19 +38,15 @@ return {
 
 			-- https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
 			lint.linters_by_ft = {
-				javascript = { "eslint" },
-				typescript = { "eslint" },
-				javascriptreact = { "eslint" },
-				typescriptreact = { "eslint" },
+				javascript = { "prettier" },
+				typescript = { "prettier" },
 				--
 				python = { "pylint" },
 				go = { "golangcilint" },
 				--
 				terraform = { "tflint", "tfsec" },
 				--
-				-- lua = { "luacheck" },
 				markdown = { "markdownlint" },
-				-- yaml = { "yamllint" },
 				json = { "jsonlint" },
 			}
 
@@ -83,9 +79,9 @@ return {
 					typescript = { "prettier" },
 					javascriptreact = { "prettier" },
 					typescriptreact = { "prettier" },
-					html = { "prettier" },
+					html = { "htmlbeautifier" },
 					css = { "prettier" },
-					-- svelte = { "prettier" },
+					--
 					python = { "isort", "black" },
 					go = { "gofumpt", "goimports" },
 					c = { "clang-format" },
@@ -95,7 +91,6 @@ return {
 					terraform = { "terraform_fmt" },
 					--
 					lua = { "stylua" },
-					nix = { "nixpkgs_fmt" },
 					markdown = { "prettier" },
 					yaml = { "prettier" },
 					json = { "prettier" },
@@ -106,6 +101,13 @@ return {
 					timeout_ms = 500,
 				},
 			})
+
+			conform.formatters.htmlbeautifier = {
+				prepend_args = function()
+					-- NOTE: https://github.com/Glavin001/atom-beautify/issues/285#issuecomment-289088405
+					return { "--keep-blank-lines", "1" }
+				end,
+			}
 
 			-- vim.keymap.set({ "n", "v" }, "<leader>mp", function()
 			--   conform.format({

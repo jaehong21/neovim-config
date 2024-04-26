@@ -25,6 +25,8 @@ return {
 			require("mason-lspconfig").setup({
 				-- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
 				ensure_installed = {
+					"htmx",
+					"templ",
 					"tsserver",
 					--
 					"pylsp",
@@ -39,7 +41,6 @@ return {
 					"helm_ls",
 					--
 					"lua_ls",
-					"nil_ls",
 					"marksman",
 					"yamlls",
 					"jsonls",
@@ -63,6 +64,8 @@ return {
 
 			local lspconfig = require("lspconfig")
 
+			lspconfig.htmx.setup({})
+			lspconfig.templ.setup({})
 			lspconfig.tsserver.setup({})
 			--
 			lspconfig.pylsp.setup({})
@@ -85,7 +88,6 @@ return {
 			})
 			--
 			lspconfig.lua_ls.setup({})
-			lspconfig.nil_ls.setup({})
 			lspconfig.marksman.setup({})
 			lspconfig.yamlls.setup({
 				settings = {
