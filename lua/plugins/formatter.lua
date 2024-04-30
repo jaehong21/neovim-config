@@ -21,9 +21,9 @@ return {
 					"tflint",
 					"tfsec",
 					--
-					"luacheck",
 					"stylua",
 					"markdownlint",
+					"mdformat",
 					"yamllint",
 					"jsonlint",
 				},
@@ -91,7 +91,7 @@ return {
 					terraform = { "terraform_fmt" },
 					--
 					lua = { "stylua" },
-					markdown = { "prettier" },
+					markdown = { "mdformat" },
 					yaml = { "prettier" },
 					json = { "prettier" },
 				},

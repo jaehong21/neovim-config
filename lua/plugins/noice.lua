@@ -10,6 +10,28 @@ return {
 			--   If not available, we use `mini` as the fallback
 			"rcarriga/nvim-notify",
 		},
-		opts = {},
+		config = function()
+			require("noice").setup({
+				lsp = {
+					signature = {
+						enabled = false,
+					},
+				},
+			})
+		end,
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("lsp_signature").setup({
+				bind = true,
+				max_height = 12,
+				max_width = 85,
+				handler_opts = {
+					border = "rounded",
+				},
+			})
+		end,
 	},
 }

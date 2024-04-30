@@ -7,31 +7,33 @@ return {
 		config = function()
 			require("lualine").setup({
 				options = {
-					-- theme = "gruvbox",
+					theme = "gruvbox",
+					-- theme = "kanagawa",
 					-- theme = "tokyonight",
-					theme = "kanagawa",
 				},
 			})
 		end,
 	},
 	{
-		"rebelot/kanagawa.nvim",
+		"morhetz/gruvbox",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("kanagawa").setup({
-				background = { dark = "wave" },
-			})
-			vim.cmd("colorscheme kanagawa")
+			vim.cmd("colorscheme gruvbox")
 		end,
 		opts = {},
 	},
 	-- {
-	--   "morhetz/gruvbox",
-	--   lazy = false,
-	--   priority = 1000,
-	--   config = function() vim.cmd("colorscheme gruvbox") end,
-	--   opts = {},
+	-- 	"rebelot/kanagawa.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("kanagawa").setup({
+	-- 			background = { dark = "wave" },
+	-- 		})
+	-- 		vim.cmd("colorscheme kanagawa")
+	-- 	end,
+	-- 	opts = {},
 	-- },
 	-- {
 	-- 	"folke/tokyonight.nvim",

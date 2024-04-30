@@ -1,9 +1,8 @@
 return {
 	{
-		"echasnovski/mini.nvim",
+		"echasnovski/mini.tabline",
 		version = false,
 		config = function()
-			require("mini.pairs").setup({})
 			require("mini.tabline").setup({
 				show_icons = true,
 				set_vim_settings = true,

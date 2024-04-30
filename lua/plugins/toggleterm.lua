@@ -5,7 +5,7 @@ return {
 	config = function()
 		require("toggleterm").setup({
 			direction = "horizontal",
-			size = 18,
+			size = 19,
 		})
 		-- vim.keymap.set({ "n", "t" }, "<leader>j", "<CMD>ToggleTerm<CR>", { noremap = true, silent = true })
 		-- vim.keymap.set({ "n", "t" }, "J", "<CMD>ToggleTerm<CR>", { noremap = true, silent = true })
