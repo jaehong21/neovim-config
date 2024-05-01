@@ -16,7 +16,8 @@ return {
 		vim.keymap.set("n", "zM", ufo.closeAllFolds)
 
 		ufo.setup({
-			provider_selector = function(bufnr, filetype, buftype)
+			-- provider_selector = function(bufnr, filetype, buftype)
+			provider_selector = function()
 				return { "treesitter", "indent" }
 			end,
 		})
