@@ -11,9 +11,23 @@ return {
 				presets = { inc_rename = true },
 			})
 			vim.keymap.set("n", "<leader>rn", ":IncRename ")
-			--[[ vim.keymap.set("n", "<leader>rn", function()
-				return ":IncRename " .. vim.fn.expand("<cword>")
-			end, { expr = true }) ]]
+			-- vim.keymap.set("n", "<leader>rn", function()
+			-- 	return ":IncRename " .. vim.fn.expand("<cword>")
+			-- end, { expr = true })
+		end,
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("lsp_signature").setup({
+				bind = true,
+				max_height = 12,
+				max_width = 85,
+				handler_opts = {
+					border = "rounded",
+				},
+			})
 		end,
 	},
 	{

@@ -12,29 +12,13 @@ return {
 		config = function()
 			require("telescope").setup({
 				defaults = {
-					-- vimgrep_arguments = {
-					--   'rg',
-					--   '--color=never',
-					--   '--no-heading',
-					--   '--with-filename',
-					--   '--line-number',
-					--   '--column',
-					--   '--smart-case',
-					-- },
+					-- vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', },
 				},
 				pickers = {
 					find_files = {
 						theme = "dropdown",
 						hidden = true,
-						find_command = {
-							"rg",
-							"--files",
-							"--smart-case",
-							"-g",
-							"!.git",
-							"-g",
-							"!.idea",
-						},
+						find_command = { "rg", "--files", "--smart-case", "-g", "!.git", "-g", "!.idea" },
 					},
 					live_grep = { theme = "dropdown" },
 					buffers = { theme = "dropdown" },
@@ -61,7 +45,7 @@ return {
 			-- mapKey('<leader>ff', M.find_files)
 			mapKey("<leader>fg", builtin.live_grep)
 			mapKey("<leader>fb", builtin.buffers)
-			mapKey("<leader>fh", builtin.help_tags)
+			-- mapKey("<leader>fh", builtin.help_tags)
 		end,
 	},
 }

@@ -104,7 +104,7 @@ return {
 
 			conform.formatters.htmlbeautifier = {
 				prepend_args = function()
-					-- NOTE: https://github.com/Glavin001/atom-beautify/issues/285#issuecomment-289088405
+					-- https://github.com/Glavin001/atom-beautify/issues/285#issuecomment-289088405
 					return { "--keep-blank-lines", "1" }
 				end,
 			}
