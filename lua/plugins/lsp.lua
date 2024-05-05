@@ -29,6 +29,8 @@ return {
 					"htmx",
 					"templ",
 					"tsserver",
+					"svelte",
+					"eslint",
 					--
 					"pylsp",
 					"gopls",
@@ -70,6 +72,8 @@ return {
 			lspconfig.htmx.setup({})
 			lspconfig.templ.setup({})
 			lspconfig.tsserver.setup({})
+			lspconfig.svelte.setup({})
+			lspconfig.eslint.setup({})
 			--
 			lspconfig.pylsp.setup({})
 			lspconfig.gopls.setup({})

@@ -6,7 +6,8 @@ return {
 			mason_tool_installer.setup({
 				ensure_installed = {
 					"prettier",
-					"eslint",
+					"prettierd",
+					"eslint_d",
 					"htmlbeautifier",
 					--
 					"pylint",
@@ -23,7 +24,6 @@ return {
 					--
 					"stylua",
 					"markdownlint",
-					"mdformat",
 					"yamllint",
 					"jsonlint",
 				},
@@ -38,8 +38,6 @@ return {
 
 			-- https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
 			lint.linters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
 				--
 				python = { "pylint" },
 				go = { "golangcilint" },
@@ -64,6 +62,15 @@ return {
 			-- vim.keymap.set("n", "<leader>l", function()
 			-- 	lint.try_lint()
 			-- end, { desc = "Trigger linting for current file" })
+
+			-- https://www.reddit.com/r/neovim/comments/19ceuoq/comment/kuna12d
+			lint.linters.markdownlint.args = {
+				"--disable",
+				"MD012",
+				"MD013",
+				"MD033",
+				"--", -- Required
+			}
 		end,
 	},
 	{
@@ -75,12 +82,12 @@ return {
 			-- https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
 			conform.setup({
 				formatters_by_ft = {
-					javascript = { "prettier" },
-					typescript = { "prettier" },
-					javascriptreact = { "prettier" },
-					typescriptreact = { "prettier" },
+					javascript = { "prettierd" },
+					typescript = { "prettierd" },
+					javascriptreact = { "prettierd" },
+					typescriptreact = { "prettierd" },
 					html = { "htmlbeautifier" },
-					css = { "prettier" },
+					css = { "prettierd" },
 					--
 					python = { "isort", "black" },
 					go = { "gofumpt", "goimports" },
@@ -91,9 +98,8 @@ return {
 					terraform = { "terraform_fmt" },
 					--
 					lua = { "stylua" },
-					markdown = { "mdformat" },
+					markdown = { "markdownlint" },
 					yaml = { "prettier" },
-					json = { "prettier" },
 				},
 				format_on_save = {
 					lsp_fallback = true,
@@ -101,6 +107,13 @@ return {
 					timeout_ms = 500,
 				},
 			})
+
+			conform.formatters.prettierd = {
+				prepend_args = {
+					-- "--single-quote",
+					"--no-semi",
+				},
+			}
 
 			conform.formatters.htmlbeautifier = {
 				prepend_args = function()
