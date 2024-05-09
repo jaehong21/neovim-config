@@ -40,6 +40,7 @@ return {
 					"rust_analyzer",
 					--
 					"terraformls",
+					"tflint",
 					"dockerls",
 					"helm_ls",
 					--

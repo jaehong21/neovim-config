@@ -20,7 +20,6 @@ return {
 					"rustfmt",
 					--
 					"tflint",
-					"tfsec",
 					--
 					"stylua",
 					"markdownlint",
@@ -42,7 +41,7 @@ return {
 				python = { "pylint" },
 				go = { "golangcilint" },
 				--
-				terraform = { "tflint", "tfsec" },
+				terraform = { "tflint" },
 				--
 				markdown = { "markdownlint" },
 				json = { "jsonlint" },
