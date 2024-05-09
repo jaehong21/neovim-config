@@ -45,7 +45,7 @@ return {
 			-- mapKey('<leader>ff', M.find_files)
 			mapKey("<leader>fg", builtin.live_grep)
 			mapKey("<leader>fb", builtin.buffers)
-			-- mapKey("<leader>fh", builtin.help_tags)
+			mapKey("<leader>ft", builtin.help_tags)
 		end,
 	},
 }

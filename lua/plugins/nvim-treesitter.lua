@@ -8,6 +8,7 @@ return {
 		},
 		config = function()
 			local configs = require("nvim-treesitter.configs")
+			---@diagnostic disable-next-line: missing-fields
 			configs.setup({
 				ensure_installed = {
 					"html",
@@ -57,6 +58,7 @@ return {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		lazy = true,
 		config = function()
+			---@diagnostic disable-next-line: missing-fields
 			require("nvim-treesitter.configs").setup({
 				textobjects = {
 					select = {
