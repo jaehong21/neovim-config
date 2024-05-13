@@ -13,6 +13,12 @@ return {
 			require("telescope").setup({
 				defaults = {
 					-- vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', },
+					mappings = {
+						i = { -- insert mode
+							["<C-j>"] = require("telescope.actions").move_selection_next,
+							["<C-k>"] = require("telescope.actions").move_selection_previous,
+						},
+					},
 				},
 				pickers = {
 					find_files = {
@@ -34,19 +40,11 @@ return {
 			require("telescope").load_extension("noice")
 
 			local builtin = require("telescope.builtin")
-			-- local M = {}
-			-- M.find_files = function()
-			--   builtin.find_files({
-			--     find_command = { 'rg', '--files', '--hidden', '--follow', '--iglob', '!.git' },
-			--   })
-			-- end
-
 			mapKey("<leader>ff", builtin.find_files)
-			-- mapKey('<leader>ff', M.find_files)
 			mapKey("<leader>fg", builtin.live_grep)
 			mapKey("<leader>fb", builtin.buffers)
 			mapKey("<leader>ft", builtin.help_tags)
-			-- mapKey("<leader>fu", builtin.lsp_references)
+			-- mapKey("fu", builtin.lsp_references)
 		end,
 	},
 }
