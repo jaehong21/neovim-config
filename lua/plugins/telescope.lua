@@ -46,6 +46,7 @@ return {
 			mapKey("<leader>fg", builtin.live_grep)
 			mapKey("<leader>fb", builtin.buffers)
 			mapKey("<leader>ft", builtin.help_tags)
+			-- mapKey("<leader>fu", builtin.lsp_references)
 		end,
 	},
 }

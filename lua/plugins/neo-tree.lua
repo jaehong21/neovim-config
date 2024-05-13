@@ -34,6 +34,7 @@ return {
 							"generated",
 							".npmrc",
 							".yarnrc.yml",
+							".pulumi",
 							".env",
 							".env.local",
 							".env.development",

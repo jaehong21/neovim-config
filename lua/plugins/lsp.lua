@@ -63,8 +63,12 @@ return {
 			ft = "helm",
 		},
 		config = function()
+			local telescope = require("telescope.builtin")
+
 			keyMapper("K", vim.lsp.buf.hover)
 			keyMapper("gd", vim.lsp.buf.definition)
+			-- keyMapper("gu", vim.lsp.buf.references)
+			keyMapper("gu", telescope.lsp_references)
 			keyMapper("<leader>ca", vim.lsp.buf.code_action)
 
 			local lspconfig = require("lspconfig")
