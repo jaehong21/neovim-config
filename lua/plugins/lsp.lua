@@ -76,10 +76,11 @@ return {
 			lspconfig.html.setup({})
 			lspconfig.htmx.setup({})
 			lspconfig.templ.setup({})
-			lspconfig.tsserver.setup({})
+			lspconfig.deno.setup({})
 			lspconfig.svelte.setup({})
 			lspconfig.eslint.setup({})
-			--
+			lspconfig.tsserver.setup({})
+
 			lspconfig.pylsp.setup({})
 			lspconfig.gopls.setup({})
 			lspconfig.clangd.setup({})
