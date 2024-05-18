@@ -28,6 +28,7 @@ return {
 							".dockerignore",
 							".github",
 							".gitea",
+							".gitlab-ci.yml",
 							".circleci",
 							".pre-commit-config.yaml",
 							".goreleaser.yaml",
