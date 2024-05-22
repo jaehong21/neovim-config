@@ -8,7 +8,7 @@ return {
 			require("lualine").setup({
 				options = {
 					theme = "gruvbox",
-					-- theme = "kanagawa",
+					-- -- theme = "kanagawa",
 					-- theme = "tokyonight",
 				},
 			})
@@ -39,11 +39,11 @@ return {
 	-- 	priority = 1000,
 	-- 	config = function()
 	-- 		require("tokyonight").setup({
-	-- 			-- transparent = true,
-	-- 			-- styles = {
-	-- 			-- 	sidebars = "transparent",
-	-- 			-- 	floats = "transparent",
-	-- 			-- },
+	-- 			transparent = true,
+	-- 			styles = {
+	-- 				sidebars = "transparent",
+	-- 				floats = "transparent",
+	-- 			},
 	-- 		})
 	--
 	-- 		vim.cmd("colorscheme tokyonight")
