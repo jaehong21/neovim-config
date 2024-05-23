@@ -4,7 +4,7 @@ return {
 	{
 		-- latest is 0.1.6 for now
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.6",
+		tag = "0.1.7",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-ui-select.nvim",

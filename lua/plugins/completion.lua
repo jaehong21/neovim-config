@@ -45,6 +45,7 @@ return {
 			local cmp = require("cmp")
 			vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
+			---@diagnostic disable-next-line: redundant-parameter
 			cmp.setup({
 				snippet = {
 					expand = function(args)
@@ -75,14 +76,24 @@ return {
 				}),
 			})
 
+			---@diagnostic disable-next-line: undefined-field
+			cmp.setup.cmdline({ "/", "?" }, {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = "buffer" },
+				}),
+			})
+
+			---@diagnostic disable-next-line: undefined-field
 			cmp.setup.cmdline(":", {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
 					{ name = "path" },
-				}, {
 					{ name = "cmdline" },
 				}),
 			})
+
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		end,
 	},
 }

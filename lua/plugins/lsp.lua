@@ -58,8 +58,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			-- https://github.com/mrjosh/helm-ls/blob/master/examples/nvim/init.lua
-			"towolf/vim-helm",
+			"towolf/vim-helm", -- https://github.com/mrjosh/helm-ls/blob/master/examples/nvim/init.lua
 			ft = "helm",
 		},
 		config = function()
@@ -72,6 +71,7 @@ return {
 			keyMapper("<leader>ca", vim.lsp.buf.code_action)
 
 			local lspconfig = require("lspconfig")
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			lspconfig.html.setup({})
 			lspconfig.htmx.setup({})
