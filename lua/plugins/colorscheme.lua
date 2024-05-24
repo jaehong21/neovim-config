@@ -5,24 +5,49 @@ return {
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
+			---@diagnostic disable-next-line: undefined-field
 			require("lualine").setup({
 				options = {
-					theme = "gruvbox",
-					-- -- theme = "kanagawa",
+					-- theme = "gruvbox",
+					-- theme = "kanagawa",
 					-- theme = "tokyonight",
+					theme = "catppuccin",
 				},
 			})
 		end,
 	},
 	{
-		"morhetz/gruvbox",
-		lazy = false,
+		"catppuccin/nvim",
+		name = "catppuccin",
 		priority = 1000,
 		config = function()
-			vim.cmd("colorscheme gruvbox")
+			require("catppuccin").setup({
+				flavour = "mocha", -- auto, latte, frappe, macchiato, mocha
+				-- background = {
+				-- 	light = "frappe",
+				-- 	dark = "frappe",
+				-- },
+				transparent_background = false,
+				integrations = {
+					harpoon = true,
+					neotree = true,
+					noice = true,
+					-- cmp = true,
+					notify = true,
+				},
+			})
+			vim.cmd("colorscheme catppuccin")
 		end,
-		opts = {},
 	},
+	-- {
+	-- 	"morhetz/gruvbox",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme gruvbox")
+	-- 	end,
+	-- 	opts = {},
+	-- },
 	-- {
 	-- 	"rebelot/kanagawa.nvim",
 	-- 	lazy = false,
