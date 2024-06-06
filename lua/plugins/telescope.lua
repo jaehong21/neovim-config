@@ -20,6 +20,7 @@ return {
 						},
 					},
 				},
+				-- WARNING: remove me
 				pickers = {
 					find_files = {
 						theme = "dropdown",

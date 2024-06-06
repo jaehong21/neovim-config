@@ -16,20 +16,20 @@ return {
 			end, { expr = true })
 		end,
 	},
-	{
-		"ray-x/lsp_signature.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("lsp_signature").setup({
-				bind = true,
-				max_height = 12,
-				max_width = 85,
-				handler_opts = {
-					border = "rounded",
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"ray-x/lsp_signature.nvim",
+	-- 	event = "VeryLazy",
+	-- 	config = function()
+	-- 		require("lsp_signature").setup({
+	-- 			bind = true,
+	-- 			max_height = 12,
+	-- 			max_width = 85,
+	-- 			handler_opts = {
+	-- 				border = "rounded",
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	{
 		"hrsh7th/nvim-cmp",
 		dependencies = {

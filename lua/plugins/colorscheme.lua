@@ -16,29 +16,6 @@ return {
 			})
 		end,
 	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha", -- auto, latte, frappe, macchiato, mocha
-				-- background = {
-				-- 	light = "frappe",
-				-- 	dark = "frappe",
-				-- },
-				transparent_background = false,
-				integrations = {
-					harpoon = true,
-					neotree = true,
-					noice = true,
-					-- cmp = true,
-					notify = true,
-				},
-			})
-			vim.cmd("colorscheme catppuccin")
-		end,
-	},
 	-- {
 	-- 	"morhetz/gruvbox",
 	-- 	lazy = false,
@@ -75,4 +52,27 @@ return {
 	-- 	end,
 	-- 	opts = {},
 	-- },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+		config = function()
+			require("catppuccin").setup({
+				flavour = "mocha", -- auto, latte, frappe, macchiato, mocha
+				-- background = {
+				-- 	light = "frappe",
+				-- 	dark = "frappe",
+				-- },
+				transparent_background = false,
+				integrations = {
+					harpoon = true,
+					neotree = true,
+					noice = true,
+					cmp = true,
+					notify = true,
+				},
+			})
+			vim.cmd("colorscheme catppuccin")
+		end,
+	},
 }
