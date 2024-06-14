@@ -10,8 +10,8 @@ return {
 				options = {
 					-- theme = "gruvbox",
 					-- theme = "kanagawa",
-					-- theme = "tokyonight",
-					theme = "catppuccin",
+					theme = "tokyonight",
+					-- theme = "catppuccin",
 				},
 			})
 		end,
@@ -20,9 +20,6 @@ return {
 	-- 	"morhetz/gruvbox",
 	-- 	lazy = false,
 	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme gruvbox")
-	-- 	end,
 	-- 	opts = {},
 	-- },
 	-- {
@@ -35,44 +32,43 @@ return {
 	-- 	end,
 	-- 	opts = {},
 	-- },
-	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("tokyonight").setup({
-	-- 			transparent = true,
-	-- 			styles = {
-	-- 				sidebars = "transparent",
-	-- 				floats = "transparent",
-	-- 			},
-	-- 		})
-	--
-	-- 		vim.cmd("colorscheme tokyonight")
-	-- 	end,
-	-- 	opts = {},
-	-- },
 	{
-		"catppuccin/nvim",
-		name = "catppuccin",
+		"folke/tokyonight.nvim",
+		lazy = false,
 		priority = 1000,
 		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha", -- auto, latte, frappe, macchiato, mocha
-				-- background = {
-				-- 	light = "frappe",
-				-- 	dark = "frappe",
-				-- },
-				transparent_background = false,
-				integrations = {
-					harpoon = true,
-					neotree = true,
-					noice = true,
-					cmp = true,
-					notify = true,
+			require("tokyonight").setup({
+				transparent = true,
+				styles = {
+					sidebars = "transparent",
+					floats = "transparent",
 				},
 			})
-			vim.cmd("colorscheme catppuccin")
+
+			vim.cmd("colorscheme tokyonight")
 		end,
+		opts = {},
 	},
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("catppuccin").setup({
+	-- 			flavour = "mocha", -- auto, latte, frappe, macchiato, mocha
+	-- 			-- background = {
+	-- 			-- 	light = "frappe",
+	-- 			-- 	dark = "frappe",
+	-- 			-- },
+	-- 			transparent_background = false,
+	-- 			integrations = {
+	-- 				harpoon = true,
+	-- 				neotree = true,
+	-- 				noice = true,
+	-- 				cmp = true,
+	-- 				notify = true,
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 }

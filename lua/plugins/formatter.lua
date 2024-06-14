@@ -105,13 +105,6 @@ return {
 					async = true,
 					timeout_ms = 500,
 				},
-
-				-- WARN: deprecated
-				-- format_on_save = {
-				-- 	lsp_fallback = true,
-				-- 	async = true,
-				-- 	timeout_ms = 500,
-				-- },
 			})
 
 			conform.formatters.prettierd = {

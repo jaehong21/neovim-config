@@ -50,7 +50,6 @@ return {
 					"yamlls",
 					"jsonls",
 					"bashls",
-					"autotools_ls", -- Makefile
 				},
 			})
 		end,
@@ -142,7 +141,6 @@ return {
 			})
 			lspconfig.jsonls.setup({})
 			lspconfig.bashls.setup({})
-			lspconfig.autotools_ls.setup({})
 		end,
 	},
 }
