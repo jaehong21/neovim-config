@@ -9,8 +9,8 @@ return {
 			require("lualine").setup({
 				options = {
 					-- theme = "gruvbox",
-					-- theme = "kanagawa",
-					theme = "tokyonight",
+					theme = "kanagawa",
+					-- theme = "tokyonight",
 					-- theme = "catppuccin",
 				},
 			})
@@ -22,33 +22,33 @@ return {
 	-- 	priority = 1000,
 	-- 	opts = {},
 	-- },
-	-- {
-	-- 	"rebelot/kanagawa.nvim",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		require("kanagawa").setup({ background = { dark = "wave" } })
-	-- 		vim.cmd("colorscheme kanagawa")
-	-- 	end,
-	-- 	opts = {},
-	-- },
 	{
-		"folke/tokyonight.nvim",
+		"rebelot/kanagawa.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("tokyonight").setup({
-				transparent = true,
-				styles = {
-					sidebars = "transparent",
-					floats = "transparent",
-				},
-			})
-
-			vim.cmd("colorscheme tokyonight")
+			require("kanagawa").setup({ background = { dark = "wave" } })
+			vim.cmd("colorscheme kanagawa")
 		end,
 		opts = {},
 	},
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("tokyonight").setup({
+	-- 			transparent = true,
+	-- 			styles = {
+	-- 				sidebars = "transparent",
+	-- 				floats = "transparent",
+	-- 			},
+	-- 		})
+	--
+	-- 		vim.cmd("colorscheme tokyonight")
+	-- 	end,
+	-- 	opts = {},
+	-- },
 	-- {
 	-- 	"catppuccin/nvim",
 	-- 	name = "catppuccin",

@@ -2,9 +2,9 @@ local mapKey = require("utils.keymapper").mapKey
 
 return {
 	{
-		-- latest is 0.1.6 for now
+		-- latest is 0.1.8 for now
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.7",
+		tag = "0.1.8",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-telescope/telescope-ui-select.nvim",
@@ -20,16 +20,15 @@ return {
 						},
 					},
 				},
-				-- WARNING: remove me
 				pickers = {
-					find_files = {
-						theme = "dropdown",
-						hidden = true,
-						find_command = { "rg", "--files", "--smart-case", "-g", "!.git", "-g", "!.idea" },
-					},
-					live_grep = { theme = "dropdown" },
-					buffers = { theme = "dropdown" },
-					help_tags = { theme = "dropdown" },
+					-- find_files = {
+					-- 	theme = "dropdown",
+					-- 	hidden = true,
+					-- 	find_command = { "rg", "--files", "--smart-case", "-g", "!.git", "-g", "!.idea" },
+					-- },
+					-- live_grep = { theme = "dropdown" },
+					-- buffers = { theme = "dropdown" },
+					-- help_tags = { theme = "dropdown" },
 				},
 				extensions = {
 					["ui-select"] = {
