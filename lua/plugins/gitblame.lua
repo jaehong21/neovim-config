@@ -5,7 +5,7 @@ return {
 
 		gitblame.setup({
 			enabled = true,
-			message_template = "<author> • <sha> • <summary> • <date>",
+			message_template = "<author> • <summary> • <date> • <sha>",
 			message_when_not_committed = "Not Committed Yet",
 			ignored_filetypes = {},
 			delay = 100, -- delay in ms
