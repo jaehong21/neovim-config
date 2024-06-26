@@ -34,6 +34,7 @@ return {
 							".goreleaser.yaml",
 							"generated",
 							".npmrc",
+							".nvmrc",
 							".yarnrc.yml",
 							"data",
 							".pulumi",
