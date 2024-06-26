@@ -3,12 +3,14 @@
 echo "Install Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install git wget gnupg tree fd sd
+brew install git wget gnupg tree fd sd ripgrep
 brew install mas
 brew install awscli kubectl helm pre-commit jq yq # circleci
-brew install gh
-brew install k9s dive
+helm plugin install https://github.com/databus23/helm-diff
+brew install gh # nvm
+brew install k9s dive gitui
 brew install jesseduffield/lazygit/lazygit
+brew install --cask hammerspoon
 brew install --cask font-hack-nerd-font
 
 # Terraform 1.7.4
@@ -42,6 +44,15 @@ go install github.com/volatiletech/sqlboiler/v4@v4.14.2
 go install github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-psql@v4.14.2
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# Java (sdkman)
+curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+# sdk install java 17.0.2.8.1-amzn
+# sdk install gradle 8.0.2
+# sdk use java 17.0.2.8.1-amzn
+# sdk use gradle 8.0.2
+# sdk default java 17.0.2.8.1-amzn
+# sdk default gradle 8.0.2
 
 echo "Install Neovim"
 # export PATH=$PATH:~/.local/share/bob/nvim-bin
@@ -61,6 +72,7 @@ brew install --cask 1password
 brew install --cask scroll-reverser
 brew install --cask jordanbaird-ice
 brew install --cask cloudflare-warp
+# brew install --cask pritunl
 # brew install --cask linear-linear
 
 echo "Install apps via mas..."
