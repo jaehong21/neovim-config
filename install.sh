@@ -1,10 +1,11 @@
-
+sudo xcodebuild -license accept
 
 echo "Install Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install git wget gnupg tree fd sd ripgrep
 brew install mas
+brew install docker colima
 brew install awscli kubectl helm pre-commit jq yq # circleci
 helm plugin install https://github.com/databus23/helm-diff
 brew install gh # nvm
@@ -47,8 +48,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 # Java (sdkman)
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
-# sdk install java 17.0.2.8.1-amzn
-# sdk install gradle 8.0.2
+sdk install java 17.0.2.8.1-amzn
+sdk install gradle 8.0.2
 # sdk use java 17.0.2.8.1-amzn
 # sdk use gradle 8.0.2
 # sdk default java 17.0.2.8.1-amzn
@@ -61,7 +62,6 @@ bob install 0.10.0
 bob use 0.10.0
 
 echo "Install apps via brew..."
-brew install --cask docker
 brew install --cask arc
 brew install --cask obsidian
 brew install --cask postman
@@ -69,7 +69,6 @@ brew install --cask raycast
 brew install --cask notion
 brew install --cask setapp
 brew install --cask 1password
-brew install --cask scroll-reverser
 brew install --cask jordanbaird-ice
 brew install --cask cloudflare-warp
 # brew install --cask pritunl
@@ -85,19 +84,7 @@ mas install 869223134 # KakaoTalk
 mas install 803453959 # Slack
 mas install 1429033973 # RunCat
 mas install 1451177988 # Petrify
+mas install 1475387142 # Tailscale
 # mas install 1102655071 # Channel Talk
 
-echo "Install following Apps through App Store"
-echo "Tailscale"
-
-echo " --- "
-
-echo "Install following Apps through Setapp"
-echo "CleanMyMac X"
-echo "CleanShot X"
-echo "Aldente Pro"
-echo "Lungo"
-echo "BetterTouchTool"
-echo "Permute"
-echo "TablePlus"
 
