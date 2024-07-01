@@ -71,6 +71,7 @@ brew install --cask setapp
 brew install --cask 1password
 brew install --cask jordanbaird-ice
 brew install --cask cloudflare-warp
+brew install --cask scroll-reverser
 # brew install --cask pritunl
 # brew install --cask linear-linear
 
@@ -86,5 +87,4 @@ mas install 1429033973 # RunCat
 mas install 1451177988 # Petrify
 mas install 1475387142 # Tailscale
 # mas install 1102655071 # Channel Talk
-
 
