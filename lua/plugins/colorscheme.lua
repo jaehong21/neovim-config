@@ -8,10 +8,7 @@ return {
 			---@diagnostic disable-next-line: undefined-field
 			require("lualine").setup({
 				options = {
-					-- theme = "gruvbox",
-					theme = "kanagawa",
-					-- theme = "tokyonight",
-					-- theme = "catppuccin",
+					theme = "auto",
 				},
 			})
 		end,
@@ -23,15 +20,26 @@ return {
 	-- 	opts = {},
 	-- },
 	{
-		"rebelot/kanagawa.nvim",
+		"scottmckendry/cyberdream.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			require("kanagawa").setup({ background = { dark = "wave" } })
-			vim.cmd("colorscheme kanagawa")
+			require("cyberdream").setup({
+				transparent = false,
+			})
+			vim.cmd("colorscheme cyberdream")
 		end,
-		opts = {},
 	},
+	-- {
+	-- 	"rebelot/kanagawa.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("kanagawa").setup({ background = { dark = "wave" } })
+	-- 		vim.cmd("colorscheme kanagawa")
+	-- 	end,
+	-- 	opts = {},
+	-- },
 	-- {
 	-- 	"folke/tokyonight.nvim",
 	-- 	lazy = false,
