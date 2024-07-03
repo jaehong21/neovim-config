@@ -22,7 +22,7 @@ custom_aws_profile() {
 
 
 # PROMPT='%{$FG[008]%} jetty %{$fg_bold[green]%}'
-PROMPT='%{$FG[008]%}user:jetty '
+PROMPT='%{$FG[008]%}user:$(whoami) '
 PROMPT+='$(custom_aws_profile)'
 PROMPT+='$(kube_ps1)'
 # PROMPT+=$'\n'
