@@ -30,8 +30,8 @@ PROMPT+='%{$fg_bold[green]%} %{$fg[green]%}%c %{$fg_bold[cyan]%}$(git_prompt_inf
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}[%{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}] %{$fg[yellow]%}🏎️%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}] %{$fg[green]%}🏁%{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}] %{$fg[yellow]%} %{$reset_color%}"
+# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}] %{$fg[green]%} %{$reset_color%}"
 
 # black, red, green, yellow, blue, magenta, cyan, white
 KUBE_PS1_SYMBOL_DEFAULT='⛴️'
