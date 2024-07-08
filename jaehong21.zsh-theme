@@ -18,10 +18,6 @@ custom_aws_profile() {
   fi
 }
 
-# PROMPT='%{$fg_bold[cyan]%}$ZSH_THEME_CLOUD_PREFIX %{$fg_bold[green]%} %{$fg[green]%}%c %{$fg_bold[cyan]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
-
-
-# PROMPT='%{$FG[008]%} jetty %{$fg_bold[green]%}'
 PROMPT='%{$FG[008]%}user:$(whoami) '
 PROMPT+='$(custom_aws_profile)'
 PROMPT+='$(kube_ps1)'
@@ -30,8 +26,6 @@ PROMPT+='%{$fg_bold[green]%} %{$fg[green]%}%c %{$fg_bold[cyan]%}$(git_prompt_inf
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}[%{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-# ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}] %{$fg[yellow]%} %{$reset_color%}"
-# ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}] %{$fg[green]%} %{$reset_color%}"
 
 # black, red, green, yellow, blue, magenta, cyan, white
 KUBE_PS1_SYMBOL_DEFAULT='⛴️'
