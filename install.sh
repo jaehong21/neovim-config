@@ -3,16 +3,40 @@ sudo xcodebuild -license accept
 echo "Install Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install git wget gnupg tree fd sd ripgrep
-brew install mas
-brew install docker colima
+brew install git wget gnupg virtualenv
+brew install tree fd sd ripgrep watch
 brew install awscli kubectl helm pre-commit jq yq # circleci
-helm plugin install https://github.com/databus23/helm-diff
-brew install gh # nvm
-brew install k9s dive gitui
+brew install mas gh k9s dive gitui
 brew install jesseduffield/lazygit/lazygit
 brew install --cask hammerspoon
 brew install --cask font-hack-nerd-font
+helm plugin install https://github.com/databus23/helm-diff
+
+# Docker (colima)
+# https://aosolorzano.medium.com/installing-colima-as-a-docker-engine-provider-with-buildx-and-compose-plugins-installed-1ce8b3bae158
+brew install docker colima
+docker context use colima # should be colima for now
+
+# set `network.address` to `true`
+vim $HOME/.colima/default/colima.yaml
+
+# docker-compose (colima)
+DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+mkdir -p $DOCKER_CONFIG/cli-plugins
+DOCKER_COMPOSE_VERSION=v2.28.1
+DOCKER_COMPOSE_ARCH=darwin-aarch64
+curl -SL https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$DOCKER_COMPOSE_ARCH -o $DOCKER_CONFIG/cli-plugins/docker-compose
+chmod +x $DOCKER_CONFIG/cli-plugins/docker-compose
+# docker compose version
+
+# buildx (colima)
+DOCKER_CONFIG=${DOCKER_CONFIG:-$HOME/.docker}
+BUILDX_VERSION=v0.15.1
+BUILDX_ARCH=darwin-arm64
+curl -SL https://github.com/docker/buildx/releases/download/$BUILDX_VERSION/buildx-$BUILDX_VERSION.$BUILDX_ARCH -o $DOCKER_CONFIG/cli-plugins/docker-buildx
+chmod +x $DOCKER_CONFIG/cli-plugins/docker-buildx
+docker buildx install
+# docker buildx version
 
 # Terraform 1.7.4
 brew install tfenv
@@ -31,20 +55,22 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 brew install autojump
 
-echo "Install Node, Golang, Rust"
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 nvm install 18.17.1
 nvm alias default 18.17.1
 npm i -g pnpm@8.7.0
+
 # Golang
 # export PATH=$PATH:~/go/bin
 brew install go
 go install github.com/air-verse/air@latest
 go install github.com/volatiletech/sqlboiler/v4@v4.14.2
 go install github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-psql@v4.14.2
+
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # Java (sdkman)
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -54,6 +80,9 @@ sdk install gradle 8.0.2
 # sdk use gradle 8.0.2
 # sdk default java 17.0.2.8.1-amzn
 # sdk default gradle 8.0.2
+
+# Poetry
+curl -sSL https://install.python-poetry.org | python3 -
 
 echo "Install Neovim"
 # export PATH=$PATH:~/.local/share/bob/nvim-bin
