@@ -23,3 +23,6 @@ mapKey("<leader>h", ":nohlsearch<CR>")
 -- indent
 mapKey("<", "<gv", "v")
 mapKey(">", ">gv", "v")
+
+-- Open github repo in browser
+mapKey("<leader>gh", "<Cmd>!gh repo view --web<CR>", "n")
