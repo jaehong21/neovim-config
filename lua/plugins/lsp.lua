@@ -33,6 +33,7 @@ return {
 					"eslint",
 					--
 					"pylsp",
+					"pyright",
 					"gopls",
 					"clangd",
 					"jdtls", -- Java
@@ -81,6 +82,7 @@ return {
 			lspconfig.tsserver.setup({})
 
 			lspconfig.pylsp.setup({})
+			lspconfig.pyright.setup({})
 			lspconfig.gopls.setup({})
 			lspconfig.clangd.setup({})
 			lspconfig.jdtls.setup({})

@@ -25,6 +25,7 @@ return {
 					"cpp",
 					"rust",
 					--
+					"hcl",
 					"terraform",
 					"dockerfile",
 					--

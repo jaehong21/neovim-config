@@ -19,6 +19,7 @@ return {
 					"clang-format",
 					"rustfmt",
 					--
+					"hclfmt",
 					"tflint",
 					--
 					"stylua",
@@ -38,7 +39,7 @@ return {
 			-- https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
 			lint.linters_by_ft = {
 				--
-				python = { "pylint" },
+				-- python = { "pylint" },
 				go = { "golangcilint" },
 				--
 				terraform = { "tflint" },
@@ -94,7 +95,8 @@ return {
 					cpp = { "clang-format" },
 					rust = { "rustfmt" },
 					--
-					terraform = { "terraform_fmt" },
+					hcl = { "hclfmt" },
+					terraform = { "terraform_fmt", "hclfmt" },
 					--
 					lua = { "stylua" },
 					markdown = { "markdownlint" },
