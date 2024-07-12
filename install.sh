@@ -3,7 +3,7 @@ sudo xcodebuild -license accept
 echo "Install Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install git wget gnupg virtualenv
+brew install git wget gnupg
 brew install tree fd sd ripgrep watch
 brew install awscli kubectl helm pre-commit jq yq # circleci
 brew install mas gh k9s dive gitui
@@ -81,8 +81,19 @@ sdk install gradle 8.0.2
 # sdk default java 17.0.2.8.1-amzn
 # sdk default gradle 8.0.2
 
+# pyenv
+brew install pyenv
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+
+pyenv install 3.12 # after source ~/.zshrc
+pyenv global 3.12
+
 # Poetry
 curl -sSL https://install.python-poetry.org | python3 -
+# https://python-poetry.org/docs/configuration/#virtualenvsin-project
+# poetry config virtualenvs.in-project true 
 
 echo "Install Neovim"
 # export PATH=$PATH:~/.local/share/bob/nvim-bin
@@ -98,8 +109,8 @@ brew install --cask raycast
 brew install --cask notion
 brew install --cask setapp
 brew install --cask 1password
+brew install --cask jetbrains-toolbox
 brew install --cask jordanbaird-ice
-brew install --cask cloudflare-warp
 brew install --cask scroll-reverser
 # brew install --cask pritunl
 # brew install --cask linear-linear
