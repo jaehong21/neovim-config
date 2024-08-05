@@ -19,7 +19,7 @@ custom_aws_profile() {
 }
 
 PROMPT='%{$FG[008]%}user:$(whoami) '
-PROMPT+='$(custom_aws_profile)'
+# PROMPT+='$(custom_aws_profile)'
 PROMPT+='$(kube_ps1)'
 # PROMPT+=$'\n'
 PROMPT+='%{$fg_bold[green]%} %{$fg[green]%}%c %{$fg_bold[cyan]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
