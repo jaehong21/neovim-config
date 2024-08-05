@@ -3,10 +3,11 @@ sudo xcodebuild -license accept
 echo "Install Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew install git wget gnupg
-brew install tree fd sd ripgrep watch
-brew install awscli kubectl helm pre-commit jq yq # circleci
-brew install mas gh k9s dive gitui
+brew install git wget gnupg step redis
+brew install tree fd sd ripgrep htop watch bat 
+brew install awscli kubectl helm krew pre-commit jq yq # circleci
+brew install mas gh k9s dive gitui 
+brew install vectordotdev/brew/vector
 brew install jesseduffield/lazygit/lazygit
 brew install --cask hammerspoon
 brew install --cask font-hack-nerd-font
@@ -39,7 +40,7 @@ docker buildx install
 # docker buildx version
 
 # Terraform 1.7.4
-brew install tfenv
+brew install tfenv terragrunt
 tfenv install 1.7.4
 tfenv use 1.7.4
 
@@ -112,6 +113,7 @@ brew install --cask 1password
 brew install --cask jetbrains-toolbox
 brew install --cask jordanbaird-ice
 brew install --cask scroll-reverser
+brew install --cask redisinsight
 # brew install --cask pritunl
 # brew install --cask linear-linear
 
