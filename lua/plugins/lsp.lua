@@ -44,6 +44,8 @@ return {
 					"tflint",
 					"dockerls",
 					"helm_ls",
+					"rnix", -- nix
+					-- "nil_ls",
 					--
 					"lua_ls",
 					"vimls",
@@ -100,6 +102,7 @@ return {
 					},
 				},
 			})
+			lspconfig.rnix.setup({})
 			--
 			lspconfig.lua_ls.setup({
 				settings = {
