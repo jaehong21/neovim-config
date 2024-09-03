@@ -6,8 +6,8 @@ return {
 	-- },
 	-- config = function()
 	-- 	require("windows").setup()
-	-- 	vim.o.winwidth = 10
-	-- 	vim.o.winminwidth = 5
+	-- 	vim.o.winwidth = 6
+	-- 	vim.o.winminwidth = 6
 	-- 	vim.o.equalalways = false
 	-- end,
 }

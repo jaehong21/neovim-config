@@ -24,5 +24,9 @@ mapKey("<leader>h", ":nohlsearch<CR>")
 mapKey("<", "<gv", "v")
 mapKey(">", ">gv", "v")
 
+-- vertical resize
+mapKey("+", ":vertical resize +5<CR>")
+mapKey("_", ":vertical resize -5<CR>")
+
 -- Open github repo in browser
 mapKey("<leader>gh", "<Cmd>!gh repo view --web<CR>", "n")
