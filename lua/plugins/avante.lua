@@ -19,13 +19,13 @@ return {
 				all_theirs = "ca",
 				both = "cb",
 				cursor = "cc",
-				next = "]x",
-				prev = "[x",
-			},
-			jump = {
 				next = "]]",
 				prev = "[[",
 			},
+			-- jump = {
+			-- 	next = "]]",
+			-- 	prev = "[[",
+			-- },
 			submit = {
 				normal = "<S-CR>",
 				insert = "<CR>",
@@ -34,12 +34,14 @@ return {
 			edit = "<leader>ae",
 			refresh = "<leader>ar",
 		},
-		hints = { enabled = true },
+		hints = {
+			enabled = false,
+		},
 		windows = {
 			---@type "right" | "left" | "top" | "bottom"
 			position = "right", -- the position of the sidebar
 			wrap = true, -- similar to vim.o.wrap
-			width = 30, -- default % based on available width
+			width = 40,
 			sidebar_header = {
 				align = "center", -- left, center, right for title
 				rounded = true,
