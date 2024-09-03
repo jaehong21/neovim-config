@@ -17,19 +17,19 @@ return {
 			lazygit:toggle()
 		end, { noremap = true, silent = true, desc = "[G]it with [L]azygit" })
 
-		local k9s = Terminal:new({ cmd = "k9s", hidden = true, direction = "float" })
+		--[[ local k9s = Terminal:new({ cmd = "k9s", hidden = true, direction = "float" })
 		vim.keymap.set({ "n", "t" }, "<leader>k9", function()
 			k9s:toggle()
-		end, { noremap = true, silent = true, desc = "[K][9]s" })
+		end, { noremap = true, silent = true, desc = "[K][9]s" }) ]]
 
-		local hibiscus = Terminal:new({ cmd = "hibiscus", hidden = true, direction = "float" })
+		--[[ local hibiscus = Terminal:new({ cmd = "hibiscus", hidden = true, direction = "float" })
 		vim.keymap.set({ "n", "t" }, "<leader>hb", function()
 			hibiscus:toggle()
-		end, { noremap = true, silent = true, desc = "[H]i[B]ibiscus" })
+		end, { noremap = true, silent = true, desc = "[H]i[B]ibiscus" }) ]]
 
-		local gitui = Terminal:new({ cmd = "gitui", hidden = true, direction = "float" })
+		--[[ local gitui = Terminal:new({ cmd = "gitui", hidden = true, direction = "float" })
 		vim.keymap.set({ "n", "t" }, "<leader>gu", function()
 			gitui:toggle()
-		end, { noremap = true, silent = true, desc = "[G]it[U]i" })
+		end, { noremap = true, silent = true, desc = "[G]it[U]i" }) ]]
 	end,
 }
