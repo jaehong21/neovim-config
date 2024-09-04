@@ -1,0 +1,80 @@
+version = 2
+final_space = true
+console_title_template = "{{ .Shell }} in {{ .Folder }}"
+
+[[blocks]]
+  type = "prompt"
+  alignment = "left"
+
+  [[blocks.segments]]
+    type = "path"
+    style = "plain"
+    background = "transparent"
+    foreground = "#8ea0d3"
+    template = "{{ .Path }}"
+
+    [blocks.segments.properties]
+      style = "full"
+
+  [[blocks.segments]]
+    type = "git"
+    style = "plain"
+    foreground = "green"
+    background = "transparent"
+    template = " {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed)}}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ .Behind }}{{ end }}{{ if gt .Ahead 0 }}⇡{{ .Ahead }}{{ end }}</>"
+
+    [blocks.segments.properties]
+      branch_icon = "" # empty
+      commit_icon = "@"
+      fetch_status = true
+
+  [[blocks.segments]]
+    type = "aws"
+    style = "powerline"
+    foreground = "#ff9901"
+    background = "transparent"
+    template = " ( {{.Profile}})"
+
+  [[blocks.segments]]
+    type = "kubectl"
+    style = "plain"
+    foreground = "#3169df"
+    background = "transparent"
+    template = "(🪼{{ .Context }})"
+
+    [blocks.segments.properties]
+      display_error = true
+
+[[blocks]]
+  newline = true
+  type = "prompt"
+  alignment = "left"
+
+  [[blocks.segments]]
+    newline = true
+    type = "text"
+    style = "plain"
+    foreground = "#8ea0d3"
+    background = "transparent"
+    template = "→"
+
+[[blocks]]
+  type = "rprompt"
+  overflow = "hide"
+
+  [[blocks.segments]]
+    type = "executiontime"
+    style = "plain"
+    foreground = "yellow"
+    background = "transparent"
+    template = "{{ .FormattedMs }}"
+
+    [blocks.segments.properties]
+      threshold = 200
+
+[secondary_prompt]
+  foreground = "#8ea0d3"
+  background = "transparent"
+
+[palette]
+grey = "#6c6c6c"
