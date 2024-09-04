@@ -26,6 +26,7 @@ return {
 					"markdownlint",
 					"yamllint",
 					"jsonlint",
+					"beautysh",
 				},
 			})
 		end,
@@ -101,6 +102,7 @@ return {
 					lua = { "stylua" },
 					markdown = { "markdownlint" },
 					yaml = { "prettier" },
+					zsh = { "beautysh" },
 				},
 				format_after_save = {
 					lsp_fallback = true,
