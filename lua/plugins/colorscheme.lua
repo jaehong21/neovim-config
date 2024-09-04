@@ -18,7 +18,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd("colorscheme gruvbox")
+			-- vim.cmd("colorscheme gruvbox")
 		end,
 		opts = {},
 	},
@@ -55,7 +55,6 @@ return {
 					floats = "transparent",
 				},
 			})
-
 			-- vim.cmd("colorscheme tokyonight")
 		end,
 		opts = {},
@@ -80,6 +79,7 @@ return {
 					notify = true,
 				},
 			})
+			vim.cmd("colorscheme catppuccin")
 		end,
 	},
 }

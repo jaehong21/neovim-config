@@ -3,6 +3,7 @@ final_space = true
 console_title_template = "{{ .Shell }} in {{ .Folder }}"
 
 [[blocks]]
+  newline = true
   type = "prompt"
   alignment = "left"
 
@@ -10,7 +11,7 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
     type = "path"
     style = "plain"
     background = "transparent"
-    foreground = "#8ea0d3"
+    foreground = "p:primary"
     template = "{{ .Path }}"
 
     [blocks.segments.properties]
@@ -38,7 +39,7 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
   [[blocks.segments]]
     type = "kubectl"
     style = "plain"
-    foreground = "#3169df"
+    foreground = "#89b4fb"
     background = "transparent"
     template = "(🪼{{ .Context }})"
 
@@ -54,7 +55,7 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
     newline = true
     type = "text"
     style = "plain"
-    foreground = "#8ea0d3"
+    foreground = "p:primary"
     background = "transparent"
     template = "→"
 
@@ -72,9 +73,15 @@ console_title_template = "{{ .Shell }} in {{ .Folder }}"
     [blocks.segments.properties]
       threshold = 200
 
+[transient_prompt]
+  foreground = "p:primary"
+  background = "transparent"
+  template = "→ "
+
 [secondary_prompt]
-  foreground = "#8ea0d3"
+  foreground = "p:primary"
   background = "transparent"
 
 [palette]
+primary = "#8ea0d3"
 grey = "#6c6c6c"
