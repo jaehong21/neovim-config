@@ -9,7 +9,7 @@ return {
 			auto_close = true,
 		},
 		config = function()
-			vim.keymap.set("n", "gt", "<Cmd>TroubleToggle<CR>")
+			vim.keymap.set("n", "tt", "<Cmd>TroubleToggle<CR>")
 		end,
 	},
 	{

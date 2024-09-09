@@ -19,8 +19,8 @@ return {
 	config = function()
 		require("venv-selector").setup({
 			keys = {},
-			pyenv_path = "/Users/jetty/.pyenv/versions",
-			poetry_path = "/Users/jetty/Library/Caches/pypoetry/virtualenvs",
+			-- pyenv_path = "/Users/jetty/.pyenv/versions",
+			-- poetry_path = "/Users/jetty/Library/Caches/pypoetry/virtualenvs",
 		})
 	end,
 }

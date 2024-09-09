@@ -8,7 +8,7 @@ return {
 		provider = "openai",
 		openai = {
 			endpoint = "https://api.openai.com/v1",
-			model = "gpt-4o",
+			model = "gpt-4o-mini",
 			temperature = 0,
 			max_tokens = 4096,
 		},
