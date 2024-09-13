@@ -28,7 +28,7 @@ return {
 					"html",
 					"htmx",
 					"templ",
-					"tsserver",
+					"ts_ls",
 					"svelte",
 					"eslint",
 					--
@@ -44,7 +44,6 @@ return {
 					"tflint",
 					"dockerls",
 					"helm_ls",
-					"rnix", -- nix
 					-- "nil_ls",
 					--
 					"lua_ls",
@@ -57,11 +56,15 @@ return {
 			})
 		end,
 	},
+	-- https://github.com/mrjosh/helm-ls/blob/master/examples/nvim/init.lua
+	{
+		"towolf/vim-helm",
+		ft = "helm",
+	},
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
-			"towolf/vim-helm", -- https://github.com/mrjosh/helm-ls/blob/master/examples/nvim/init.lua
-			ft = "helm",
+			-- "b0o/schemastore.nvim",
 		},
 		config = function()
 			local telescope = require("telescope.builtin")
@@ -81,7 +84,7 @@ return {
 			lspconfig.deno.setup({})
 			lspconfig.svelte.setup({})
 			lspconfig.eslint.setup({})
-			lspconfig.tsserver.setup({})
+			lspconfig.ts_ls.setup({})
 
 			lspconfig.pylsp.setup({})
 			lspconfig.pyright.setup({})
@@ -96,13 +99,21 @@ return {
 			lspconfig.helm_ls.setup({
 				settings = {
 					["helm-ls"] = {
+						logLevel = "info",
+						valuesFiles = {
+							mainValuesFile = "values.yaml",
+							additionalValuesFilesGlobPattern = "*/values.yaml",
+							-- lintOverlayValuesFile = "values.lint.yaml",
+							-- additionalValuesFilesGlobPattern = "values*.yaml",
+						},
 						yamlls = {
+							enabled = true,
+							diagnosticsLimit = 0, -- disable all diagnostics
 							path = "yaml-language-server",
 						},
 					},
 				},
 			})
-			lspconfig.rnix.setup({})
 			--
 			lspconfig.lua_ls.setup({
 				settings = {
@@ -133,13 +144,27 @@ return {
 			lspconfig.vimls.setup({})
 			lspconfig.marksman.setup({})
 			lspconfig.yamlls.setup({
+				-- filetypes = { "yaml", "yml" },
+				-- flags = { debounce_test_changes = 150 },
 				settings = {
 					yaml = {
+						format = {
+							enable = true,
+							singleQuote = true,
+							printWidth = 120,
+						},
+						hover = true,
+						completion = true,
+						validate = true,
 						schemas = {
 							kubernetes = "globPattern",
 							["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = "/.*/workflows/*",
 							-- ["https://json.schemastore.org/github-workflow.json"] = "/.*/workflows/*",
-							["https://goreleaser.com/static/schema.json"] = ".goreleaser.yaml",
+							-- ["https://goreleaser.com/static/schema.json"] = ".goreleaser.yaml",
+						},
+						schemaStore = {
+							enable = true,
+							url = "https://www.schemastore.org/json",
 						},
 					},
 				},
