@@ -24,6 +24,7 @@ return {
 					--
 					"stylua",
 					"markdownlint",
+					"yamlfmt",
 					"yamllint",
 					"jsonlint",
 					"beautysh",
@@ -101,7 +102,7 @@ return {
 					--
 					lua = { "stylua" },
 					markdown = { "markdownlint" },
-					yaml = { "prettier" },
+					yaml = { "yamlfmt" },
 					zsh = { "beautysh" },
 				},
 				format_after_save = {
@@ -115,6 +116,15 @@ return {
 				prepend_args = {
 					-- "--single-quote",
 					"--no-semi",
+				},
+			}
+
+			conform.formatters.yamlfmt = {
+				-- https://github.com/google/yamlfmt/blob/main/docs/command-usage.md
+				-- https://github.com/google/yamlfmt/blob/main/docs/config-file.md
+				prepend_args = {
+					"-formatter",
+					"retain_line_breaks_single=true",
 				},
 			}
 
