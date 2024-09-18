@@ -38,6 +38,7 @@ return {
 							".yarnrc.yml",
 							"data",
 							".pulumi",
+							".air.toml",
 							".dev.vars",
 							".env",
 							".env.local",
