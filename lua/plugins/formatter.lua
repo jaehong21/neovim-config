@@ -10,7 +10,6 @@ return {
 					"eslint_d",
 					"htmlbeautifier",
 					--
-					"pylint",
 					"black",
 					"isort",
 					"golangci-lint",
@@ -27,7 +26,6 @@ return {
 					"yamlfmt",
 					"yamllint",
 					"jsonlint",
-					"beautysh",
 				},
 			})
 		end,
@@ -41,7 +39,6 @@ return {
 			-- https://github.com/mfussenegger/nvim-lint?tab=readme-ov-file#available-linters
 			lint.linters_by_ft = {
 				--
-				-- python = { "pylint" },
 				go = { "golangcilint" },
 				--
 				terraform = { "tflint" },
@@ -91,7 +88,7 @@ return {
 					html = { "htmlbeautifier" },
 					css = { "prettierd" },
 					--
-					python = { "isort", "black" },
+					python = { "black" },
 					go = { "gofumpt", "goimports" },
 					c = { "clang-format" },
 					cpp = { "clang-format" },
@@ -103,7 +100,6 @@ return {
 					lua = { "stylua" },
 					markdown = { "markdownlint" },
 					yaml = { "yamlfmt" },
-					zsh = { "beautysh" },
 				},
 				format_after_save = {
 					lsp_fallback = true,
@@ -125,6 +121,7 @@ return {
 				prepend_args = {
 					"-formatter",
 					"retain_line_breaks_single=true",
+					"drop_merge_tag=true",
 				},
 			}
 
