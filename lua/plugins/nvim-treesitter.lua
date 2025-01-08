@@ -23,6 +23,7 @@ return {
 					"gosum",
 					"c",
 					"cpp",
+					"java",
 					"rust",
 					--
 					"hcl",

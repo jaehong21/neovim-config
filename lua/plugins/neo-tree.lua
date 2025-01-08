@@ -37,6 +37,7 @@ return {
 							".nvmrc",
 							".yarnrc.yml",
 							"data",
+							".streamlit",
 							".pulumi",
 							".air.toml",
 							".dev.vars",

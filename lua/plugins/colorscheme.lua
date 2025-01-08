@@ -39,7 +39,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("kanagawa").setup({ background = { dark = "wave" } })
-			vim.cmd("colorscheme kanagawa")
+			-- vim.cmd("colorscheme kanagawa")
 		end,
 		opts = {},
 	},
@@ -65,7 +65,7 @@ return {
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
-				flavour = "mocha", -- auto, latte, frappe, macchiato, mocha
+				flavour = "frappe", -- auto, latte, frappe, macchiato, mocha
 				-- background = {
 				-- 	light = "frappe",
 				-- 	dark = "frappe",
@@ -79,7 +79,7 @@ return {
 					notify = true,
 				},
 			})
-			-- vim.cmd("colorscheme catppuccin")
+			vim.cmd("colorscheme catppuccin")
 		end,
 	},
 }

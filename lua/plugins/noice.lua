@@ -8,36 +8,39 @@ return {
 			-- OPTIONAL:
 			--   `nvim-notify` is only needed, if you want to use the notification view.
 			--   If not available, we use `mini` as the fallback
-			"rcarriga/nvim-notify",
+			--   NOTE: uncomment if you want to use nvim-notify
+			-- "rcarriga/nvim-notify",
 		},
 		config = function()
 			require("noice").setup({
 				lsp = {
-					progress = { enabled = false },
+					progress = { enabled = true, view = "mini" },
 					signature = { enabled = false },
 					hover = { enabled = false },
+					message = { enabled = false },
 				},
 			})
 		end,
 	},
-	{
-		"rcarriga/nvim-notify",
-		opts = {
-			on_open = function(win)
-				local config = vim.api.nvim_win_get_config(win)
-				config.border = "single"
-				vim.api.nvim_win_set_config(win, config)
-			end,
-		},
-		config = function()
-			-- :h notify.setup()
-			---@diagnostic disable-next-line: undefined-field
-			require("notify").setup({
-				render = "compact",
-				stages = "fade_in_slide_out",
-				timeout = 150,
-				top_down = true,
-			})
-		end,
-	},
+	-- {
+	-- 	"rcarriga/nvim-notify",
+	-- 	opts = {
+	-- 		on_open = function(win)
+	-- 			local config = vim.api.nvim_win_get_config(win)
+	-- 			config.border = "single"
+	-- 			vim.api.nvim_win_set_config(win, config)
+	-- 		end,
+	-- 	},
+	-- 	config = function(_, opts)
+	-- 		-- :h notify.setup()
+	-- 		---@diagnostic disable-next-line: undefined-field
+	-- 		require("notify").setup({
+	-- 			render = "compact",
+	-- 			stages = "fade_in_slide_out",
+	-- 			timeout = 150,
+	-- 			top_down = true,
+	-- 			on_open = opts.on_open,
+	-- 		})
+	-- 	end,
+	-- },
 }
