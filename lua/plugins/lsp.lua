@@ -33,7 +33,7 @@ return {
 					"eslint",
 					--
 					"pylsp",
-					-- "pyright",
+					"pyright",
 					"gopls",
 					"clangd",
 					"jdtls", -- Java
@@ -93,17 +93,17 @@ return {
 							pycodestyle = {
 								enabled = true,
 								ignore = { "E501" }, -- Ignore line length warnings
-								maxLineLength = 100, -- Set a custom max line length if needed
+								maxLineLength = 100, -- Set a custom max line length
 							},
 							pyflakes = {
 								enabled = true,
-								ignore = { "unknown-attribute" }, -- Custom setting to ignore unknown attributes
+								ignore = { "unknown-attribute" }, -- Ignore unknown attribute warnings
 							},
 						},
 					},
 				},
 			})
-			-- lspconfig.pyright.setup({})
+			lspconfig.pyright.setup({})
 			lspconfig.gopls.setup({})
 			lspconfig.clangd.setup({})
 			lspconfig.jdtls.setup({})
