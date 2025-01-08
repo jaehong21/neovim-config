@@ -73,6 +73,7 @@ return {
 			keyMapper("gd", vim.lsp.buf.definition)
 			-- keyMapper("gu", vim.lsp.buf.references)
 			keyMapper("gu", telescope.lsp_references)
+			keyMapper("gi", vim.lsp.buf.implementation)
 			keyMapper("<leader>ca", vim.lsp.buf.code_action)
 
 			local lspconfig = require("lspconfig")
