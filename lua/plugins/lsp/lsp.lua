@@ -3,61 +3,53 @@ local keyMapper = require("utils.keymapper").mapKey
 return {
 	{
 		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup({
-				ui = {
-					icons = {
-						package_installed = "✓",
-						package_pending = "➜",
-						package_uninstalled = "✗",
-					},
+		opts = {
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
 				},
-			})
-		end,
+			},
+		},
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
 		opts = {
 			auto_install = true,
+			ensure_installed = {
+				"html",
+				"htmx",
+				"templ",
+				"ts_ls",
+				"svelte",
+				"eslint",
+				--
+				"pylsp",
+				"pyright",
+				"gopls",
+				"clangd",
+				"jdtls", -- Java
+				"gradle_ls",
+				"rust_analyzer",
+				--
+				"terraformls",
+				"tflint",
+				"dockerls",
+				"helm_ls",
+				--
+				"lua_ls",
+				"vimls",
+				"marksman",
+				"yamlls",
+				"jsonls",
+				"bashls",
+			},
 		},
-		config = function()
-			require("mason-lspconfig").setup({
-				-- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
-				ensure_installed = {
-					"html",
-					"htmx",
-					"templ",
-					"ts_ls",
-					"svelte",
-					"eslint",
-					--
-					"pylsp",
-					"pyright",
-					"gopls",
-					"clangd",
-					"jdtls", -- Java
-					"gradle_ls",
-					"rust_analyzer",
-					--
-					"terraformls",
-					"tflint",
-					"dockerls",
-					"helm_ls",
-					-- "nil_ls",
-					--
-					"lua_ls",
-					"vimls",
-					"marksman",
-					"yamlls",
-					"jsonls",
-					"bashls",
-				},
-			})
-		end,
 	},
-	-- https://github.com/mrjosh/helm-ls/blob/master/examples/nvim/init.lua
 	{
+		-- https://github.com/mrjosh/helm-ls/blob/master/examples/nvim/init.lua
 		"towolf/vim-helm",
 		ft = "helm",
 	},
@@ -73,11 +65,11 @@ return {
 			keyMapper("gd", vim.lsp.buf.definition)
 			-- keyMapper("gu", vim.lsp.buf.references)
 			keyMapper("gu", telescope.lsp_references)
-			keyMapper("gi", vim.lsp.buf.implementation)
+			keyMapper("gi", telescope.lsp_implementations)
 			keyMapper("<leader>ca", vim.lsp.buf.code_action)
 
 			local lspconfig = require("lspconfig")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			lspconfig.html.setup({})
 			lspconfig.htmx.setup({})
