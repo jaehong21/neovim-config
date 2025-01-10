@@ -25,6 +25,7 @@ return {
 						visible = false,
 						always_show = {
 							".gitignore",
+							".golangci.yml",
 							".dockerignore",
 							".github",
 							".gitea",
