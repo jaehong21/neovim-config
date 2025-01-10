@@ -70,7 +70,7 @@ return {
 					if project_name then
 						-- NOTE: lombok is downloaded manually
 						local home = os.getenv("HOME")
-						local lombok = home .. "/.config/nvim/lua/plugins/lsp/java/lombok.jar"
+						local lombok = home .. "/.config/nvim/lua/plugins/lsp/bin/lombok.jar"
 
 						vim.list_extend(cmd, {
 							"-configuration",
