@@ -29,9 +29,7 @@ return {
 					-- live_grep = { theme = "dropdown" },
 					-- buffers = { theme = "dropdown" },
 					-- help_tags = { theme = "dropdown" },
-					colorscheme = {
-						enable_preview = true,
-					},
+					colorscheme = { enable_preview = true },
 				},
 				extensions = {
 					["ui-select"] = {

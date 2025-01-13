@@ -1,43 +1,16 @@
+---@diagnostic disable: deprecated
+
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = { "BufReadPre", "BufNewFile" },
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
+		dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+		opts = {},
 		config = function()
 			local configs = require("nvim-treesitter.configs")
 			---@diagnostic disable-next-line: missing-fields
 			configs.setup({
-				ensure_installed = {
-					"html",
-					"css",
-					"tsx",
-					"javascript",
-					"typescript",
-					--
-					"python",
-					"go",
-					"gomod",
-					"gosum",
-					"c",
-					"cpp",
-					"java",
-					"rust",
-					--
-					"hcl",
-					"terraform",
-					"dockerfile",
-					--
-					"lua",
-					"markdown",
-					"yaml",
-					"toml",
-					"bash",
-					"vim",
-					"vimdoc",
-				},
 				auto_install = true,
 				sync_install = false,
 				autopairs = { enable = true },
