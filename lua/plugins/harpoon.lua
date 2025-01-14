@@ -5,10 +5,9 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
 	},
+	opts = {},
 	config = function()
 		local harpoon = require("harpoon")
-		harpoon.setup({})
-
 		vim.keymap.set("n", "<leader>ha", function()
 			harpoon:list():add()
 		end)
@@ -16,6 +15,7 @@ return {
 			harpoon.ui:toggle_quick_menu(harpoon:list())
 		end)
 
+		return true
 		-- vim.keymap.set("n", "<C-S-h>", function() harpoon:list():prev() end)
 		-- vim.keymap.set("n", "<C-S-l>", function() harpoon:list():next() end)
 
