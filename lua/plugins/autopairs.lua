@@ -1,5 +1,5 @@
 return {
-	{
+	--[[ {
 		"windwp/nvim-autopairs",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
@@ -22,8 +22,9 @@ return {
 			})
 			npairs.add_rules(require("nvim-autopairs.rules.endwise-lua"))
 		end,
-	},
-	{
+	}, ]]
+
+	--[[ {
 		"windwp/nvim-ts-autotag",
 		dependencies = { "nvim-treesitter" },
 		event = "InsertEnter",
@@ -32,8 +33,9 @@ return {
 				enable = true,
 			})
 		end,
-	},
-	{
+	}, ]]
+
+	--[[ {
 		"RRethy/nvim-treesitter-endwise",
 		dependencies = { "nvim-treesitter" },
 		event = "InsertEnter",
@@ -42,5 +44,5 @@ return {
 				endwise = { enable = true },
 			})
 		end,
-	},
+	}, ]]
 }

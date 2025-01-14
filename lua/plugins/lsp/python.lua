@@ -102,33 +102,33 @@ return {
 		},
 	},
 
-	{
+	--[[ {
 		"hrsh7th/nvim-cmp",
 		opts = function(_, opts)
 			opts.auto_brackets = opts.auto_brackets or {}
 			table.insert(opts.auto_brackets, "python")
 		end,
+	}, ]]
+
+	--[[ {
+		"nvim-neotest/neotest",
+		optional = true,
+		dependencies = {
+			"nvim-neotest/neotest-python",
+		},
+		opts = {
+			adapters = {
+				["neotest-python"] = {
+					-- Here you can specify the settings for the adapter, i.e.
+					-- runner = "pytest",
+					-- python = ".venv/bin/python",
+				},
+			},
+		},
 	},
 
-	-- {
-	-- 	"nvim-neotest/neotest",
-	-- 	optional = true,
-	-- 	dependencies = {
-	-- 		"nvim-neotest/neotest-python",
-	-- 	},
-	-- 	opts = {
-	-- 		adapters = {
-	-- 			["neotest-python"] = {
-	-- 				-- Here you can specify the settings for the adapter, i.e.
-	-- 				-- runner = "pytest",
-	-- 				-- python = ".venv/bin/python",
-	-- 			},
-	-- 		},
-	-- 	},
-	-- },
-	--
-	-- {
-	-- 	"nvim-neotest/neotest-python",
-	-- 	lazy = true,
-	-- },
+	{
+		"nvim-neotest/neotest-python",
+		lazy = true,
+	}, ]]
 }
