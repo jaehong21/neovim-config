@@ -21,8 +21,18 @@ return {
 		optional = true,
 		opts = {
 			formatters_by_ft = {
+				hcl = { "hclfmt" },
 				terraform = { "terraform_fmt" },
 				terragrunt = { "terragrunt_hclfmt" },
+			},
+		},
+	},
+
+	{
+		"mfussenegger/nvim-lint",
+		opts = {
+			linters_by_ft = {
+				terraform = { "tflint" },
 			},
 		},
 	},

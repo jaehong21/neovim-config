@@ -1,5 +1,15 @@
 return {
 	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = {
+			ensure_installed = {
+				"black",
+				"isort",
+			},
+		},
+	},
+
+	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = function(_, opts)
 			opts.ensure_installed = opts.ensure_installed or {}
@@ -17,7 +27,7 @@ return {
 		optional = true,
 		opts = {
 			formatters_by_ft = {
-				python = { "isort", "ruff_format" },
+				python = { "isort", "ruff_format", "black" },
 			},
 		},
 	},
