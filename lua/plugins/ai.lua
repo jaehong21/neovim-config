@@ -35,6 +35,13 @@ return {
 				provider = "fzf", -- 'native' | 'fzf' (fzf-lua) | 'telescope' | string
 				provider_opts = {},
 			},
+			mappings = {
+				submit = {
+					insert = "<CR>",
+					normal = "<S-CR>",
+				},
+			},
+			hints = { enabled = true },
 		},
 		dependencies = {
 			"stevearc/dressing.nvim",
