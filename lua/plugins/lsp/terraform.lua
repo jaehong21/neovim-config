@@ -1,5 +1,13 @@
 return {
 	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		opts = function(_, opts)
+			opts.ensure_installed = opts.ensure_installed or {}
+			vim.list_extend(opts.ensure_installed, { "tflint" })
+		end,
+	},
+
+	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = function(_, opts)
 			-- TODO: expect official terragrunt support
@@ -10,9 +18,7 @@ return {
 			})
 
 			opts.ensure_installed = opts.ensure_installed or {}
-			vim.list_extend(opts.ensure_installed, {
-				"terraform",
-			})
+			vim.list_extend(opts.ensure_installed, { "terraform" })
 		end,
 	},
 
@@ -21,7 +27,6 @@ return {
 		optional = true,
 		opts = {
 			formatters_by_ft = {
-				hcl = { "hclfmt" },
 				terraform = { "terraform_fmt" },
 				terragrunt = { "terragrunt_hclfmt" },
 			},

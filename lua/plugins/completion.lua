@@ -1,58 +1,56 @@
 return {
-  {
-    "saghen/blink.cmp",
-    dependencies = {
-      -- optional: provides snippets for the snippet source
-      "rafamadriz/friendly-snippets",
-      { 'L3MON4D3/LuaSnip', version = 'v2.*' }
-    },
-    version = "*",
-    ---@module 'blink.cmp'
-    ---@type blink.cmp.Config
-    opts = {
-      -- https://cmp.saghen.dev/configuration/keymap.html#presets
-      keymap = { preset = "super-tab", }, -- "default" | "super-tab" | "enter"
+	{
+		"saghen/blink.cmp",
+		dependencies = {
+			-- optional: provides snippets for the snippet source
+			"rafamadriz/friendly-snippets",
+			{ "L3MON4D3/LuaSnip", version = "v2.*" },
+		},
+		version = "*",
+		---@module 'blink.cmp'
+		---@type blink.cmp.Config
+		opts = {
+			-- https://cmp.saghen.dev/configuration/keymap.html#presets
+			keymap = { preset = "super-tab" }, -- "default" | "super-tab" | "enter"
 
-      appearance = {
-        nerd_font_variant = "mono", -- "normal" | "mono"
+			appearance = {
+				nerd_font_variant = "mono", -- "normal" | "mono"
 
-        use_nvim_cmp_as_default = false,
-      },
+				use_nvim_cmp_as_default = false,
+			},
 
-      completion = {
-        ghost_text = { enabled = true },
-      },
+			completion = { ghost_text = { enabled = true } },
 
-      snippets = { preset = 'luasnip' },
-      sources = {
-        -- you can extend it elsewhere in your config, without redefining it, due to `opts_extend`
-        default = { "lsp", "snippets", "buffer", "path", },
-      },
-      -- https://cmp.saghen.dev/configuration/reference.html#signature
-      signature = { enabled = true },
-    },
-    opts_extend = { "sources.default" },
-  },
+			snippets = { preset = "luasnip" },
+			sources = {
+				-- you can extend it elsewhere in your config, without redefining it, due to `opts_extend`
+				default = { "lsp", "snippets", "buffer", "path" },
+			},
+			-- https://cmp.saghen.dev/configuration/reference.html#signature
+			signature = { enabled = true },
+		},
+		opts_extend = { "sources.default" },
+	},
 
-  {
-    "smjonas/inc-rename.nvim",
-    config = function()
-      require("inc_rename").setup({
-        presets = { inc_rename = true },
-      })
-      vim.keymap.set("n", "<leader>rn", ":IncRename ")
-      -- vim.keymap.set("n", "<leader>rn", function()
-      --   return ":IncRename " .. vim.fn.expand("<cword>")
-      -- end, { expr = true })
-    end,
-  },
+	{
+		"smjonas/inc-rename.nvim",
+		config = function()
+			require("inc_rename").setup({
+				presets = { inc_rename = true },
+			})
+			vim.keymap.set("n", "<leader>rn", ":IncRename ")
+			-- vim.keymap.set("n", "<leader>rn", function()
+			--   return ":IncRename " .. vim.fn.expand("<cword>")
+			-- end, { expr = true })
+		end,
+	},
 
-  {
-    "github/copilot.vim",
-    lazy = false,
-    cmd = "Copilot",
-  },
-  --[[ {
+	{
+		"github/copilot.vim",
+		lazy = false,
+		cmd = "Copilot",
+	},
+	--[[ {
 		"hrsh7th/nvim-cmp",
 		dependencies = {
 			"hrsh7th/cmp-nvim-lsp",
