@@ -36,8 +36,6 @@ return {
 				accept = {
 					auto_brackets = {
 						enabled = true,
-						kind_resolution = { enabled = true },
-						semantic_token_resolution = { enabled = true },
 					},
 				},
 				ghost_text = { enabled = true },
