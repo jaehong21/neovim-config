@@ -1,14 +1,9 @@
 return {
 	{
-		"zbirenbaum/copilot.lua",
+		"github/copilot.vim",
+		lazy = false,
 		cmd = "Copilot",
-		event = "InsertEnter",
-		opts = {
-			filetypes = { yaml = true },
-		},
-		config = true,
 	},
-
 	{
 		"yetone/avante.nvim",
 		event = "VeryLazy",
@@ -20,19 +15,24 @@ return {
 			---@alias avante.nvim.Provider "claude" | "openai" | "azure" | "gemini" | "vertex" | "cohere" | "copilot" | string
 			provider = "copilot",
 			openai = {
-				-- api_key_name = "OPENROUTER_API_KEY",
-				-- endpoint = "https://openrouter.ai/api/v1",
-				-- model = "anthropic/claude-3.5-sonnet", -- "deepseek/deepseek-chat" | "openai/chatgpt-4o-latest"
-				api_key_name = "OPENAI_API_KEY",
-				endpoint = "https://api.openai.com/v1", -- default
-				model = "gpt-4o", -- default
+				-- api_key_name = "OPENAI_API_KEY",
+				-- endpoint = "https://api.openai.com/v1",
+				-- model = "gpt-4o",
 			},
 			copilot = {
-				-- endpoint = "https://api.githubcopilot.com", -- default
-				-- model = "gpt-4o-2024-08-06" -- default
+				-- endpoint = "https://api.githubcopilot.com",
+				-- model = "gpt-4o-2024-08-06", -- "gpt-4o" | "claude-3.5-sonnet"
+			},
+			vendors = {
+				["openrouter"] = {
+					__inherited_from = "openai",
+					api_key_name = "OPENROUTER_API_KEY",
+					endpoint = "https://openrouter.ai/api/v1",
+					model = "anthropic/claude-3.5-sonnet", -- "deepseek/deepseek-chat" | "openai/chatgpt-4o-latest" | "anthropic/claude-3.5-sonnet"
+				},
 			},
 			file_selector = {
-				provider = "fzf", -- 'native' | 'fzf' (fzf-lua) | 'telescope' | string
+				provider = "telescope", -- 'native' | 'fzf' (fzf-lua) | 'telescope' | string
 				provider_opts = {},
 			},
 			mappings = {
@@ -49,10 +49,8 @@ return {
 			"MunifTanjim/nui.nvim",
 
 			-- optional dependencies below
-			"ibhagwan/fzf-lua", -- for `file_selector`
+			-- "ibhagwan/fzf-lua", -- for `file_selector`
 			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-			"zbirenbaum/copilot.lua", -- for providers='copilot'
-			-- "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
 			{
 				-- Make sure to set this up properly if you have lazy=true
 				"MeanderingProgrammer/render-markdown.nvim",

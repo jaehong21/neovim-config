@@ -10,6 +10,9 @@ mapKey("<C-k>", "<C-w>k") -- Up
 mapKey("<C-l>", "<C-w>l") -- Right
 -- mapKey("<leader>fq", "<Cmd>close<CR>", "n") -- Close pane
 
+-- split
+mapKey("<leader>vs", "<Cmd>vsplit<CR>", "n")
+
 mapKey("<S-h>", "<Cmd>bprev<CR>", "n") -- Previous buffer
 mapKey("<S-l>", "<Cmd>bnext<CR>", "n") -- Next buffer
 mapKey("<leader>q", "<Cmd>bd<CR>", "n") -- Close pane
