@@ -24,8 +24,8 @@ return {
 		opts = {
 			-- https://cmp.saghen.dev/configuration/keymap.html#presets
 			keymap = {
-				preset = "super-tab", -- "default" | "super-tab" | "enter"
-				-- cmdline = { preset = "super-tab" },
+				preset = "enter", -- "default" | "super-tab" | "enter"
+				cmdline = { preset = "super-tab" },
 			},
 			appearance = {
 				nerd_font_variant = "mono", -- "normal" | "mono"
