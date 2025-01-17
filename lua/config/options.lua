@@ -8,6 +8,10 @@ opt.expandtab = true
 opt.smartindent = true
 opt.wrap = false
 
+-- split
+opt.splitright = true
+opt.splitbelow = true
+
 -- search
 opt.incsearch = true
 opt.ignorecase = true

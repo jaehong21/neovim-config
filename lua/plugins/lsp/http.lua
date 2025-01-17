@@ -13,8 +13,7 @@ return {
 	{
 		"mistweaverco/kulala.nvim",
 		opts = {
-			display_mode = "float", -- "split" | "float"
-			default_view = "headers_body", -- "headers_body" | "body" | "headers"
+			default_view = "body",
 		},
 		config = function(_, opts)
 			require("kulala").setup(opts)
@@ -24,8 +23,14 @@ return {
 			vim.keymap.set(
 				"n",
 				"<leader>kr",
-				"<Cmd>lua require('kulala').run()<CR>",
-				{ silent = true, desc = "Run request" }
+				"<cmd>lua require('kulala').run()<cr>",
+				{ noremap = true, silent = true, desc = "Run request" }
+			)
+			vim.keymap.set(
+				"n",
+				"<leader>kt",
+				"<cmd>lua require('kulala').toggle_view()<cr>",
+				{ noremap = true, silent = true, desc = "Toggle between body and headers" }
 			)
 
 			vim.filetype.add({ extension = { ["http"] = "http" } })
