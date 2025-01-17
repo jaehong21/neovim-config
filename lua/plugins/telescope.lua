@@ -21,11 +21,11 @@ return {
 					},
 				},
 				pickers = {
-					-- find_files = {
-					-- 	theme = "dropdown",
-					-- 	hidden = true,
-					-- 	find_command = { "rg", "--files", "--smart-case", "-g", "!.git", "-g", "!.idea" },
-					-- },
+					find_files = {
+						-- theme = "dropdown",
+						hidden = true,
+						find_command = { "rg", "--files", "--smart-case", "-g", "!.git" },
+					},
 					-- live_grep = { theme = "dropdown" },
 					-- buffers = { theme = "dropdown" },
 					-- help_tags = { theme = "dropdown" },
@@ -33,7 +33,8 @@ return {
 				},
 				extensions = {
 					["ui-select"] = {
-						require("telescope.themes").get_dropdown({}),
+						-- 'get_dropdown' | 'get_dropdown' | 'get_ivy'
+						-- require("telescope.themes").get_dropdown({}),
 					},
 				},
 			})
