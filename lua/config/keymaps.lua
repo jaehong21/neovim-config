@@ -13,11 +13,10 @@ mapKey("<C-l>", "<C-w>l") -- Right
 -- split
 mapKey("<leader>vs", "<Cmd>vsplit<CR>", "n")
 
+-- buffer
 mapKey("<S-h>", "<Cmd>bprev<CR>", "n") -- Previous buffer
 mapKey("<S-l>", "<Cmd>bnext<CR>", "n") -- Next buffer
 mapKey("<leader>q", "<Cmd>bd<CR>", "n") -- Close pane
-
-mapKey("<leader>fr", ":Neotree reveal<CR>", "n") -- Reveal current file in neotree
 mapKey("<leader><leader>", "<C-^>") -- Move to last buffer
 
 -- clear search highlight

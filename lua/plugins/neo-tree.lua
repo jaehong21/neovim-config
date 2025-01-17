@@ -50,6 +50,9 @@ return {
 					},
 				},
 			})
+
+			-- Reveal current file in neotree
+			vim.keymap.set("n", "<leader>fr", ":Neotree reveal<CR>")
 		end,
 		opts = {},
 	},
