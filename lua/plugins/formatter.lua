@@ -15,10 +15,9 @@ return {
 			},
 		},
 		-- config = function(_, opts)
-		--   vim.keymap.set({ "n", "v" }, "<leader>fm", function()
-		--     local conform = require("conform")
-		--     conform.format(opts.format_after_save)
-		--   end, { desc = "Format file or range (in visual mode)" })
+		-- 	vim.keymap.set({ "n", "v" }, "<leader>fm", function()
+		-- 		require("conform").format(opts.format_after_save)
+		-- 	end, { desc = "Format file or range (in visual mode)" })
 		-- end,
 	},
 

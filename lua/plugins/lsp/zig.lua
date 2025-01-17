@@ -11,9 +11,12 @@ return {
 		optional = true,
 		opts = {
 			formatters_by_ft = {
-				go = { "zig_fmt" },
+				zig = { "zig_fmt" },
 			},
 		},
+		-- config = function()
+		-- 	vim.g.zig_fmt_autosave = 0 -- disable fmt on_save
+		-- end,
 	},
 
 	{
