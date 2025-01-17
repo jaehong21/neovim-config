@@ -3,7 +3,11 @@ return {
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		opts = function(_, opts)
 			opts.ensure_installed = opts.ensure_installed or {}
-			vim.list_extend(opts.ensure_installed, { "tflint" })
+			vim.list_extend(opts.ensure_installed, {
+				"hclfmt",
+				"tflint",
+				"tfsec",
+			})
 		end,
 	},
 
@@ -27,6 +31,7 @@ return {
 		optional = true,
 		opts = {
 			formatters_by_ft = {
+				hcl = { "hclfmt" },
 				terraform = { "terraform_fmt" },
 				terragrunt = { "terragrunt_hclfmt" },
 			},
@@ -37,7 +42,7 @@ return {
 		"mfussenegger/nvim-lint",
 		opts = {
 			linters_by_ft = {
-				terraform = { "tflint" },
+				terraform = { "tflint", "tfsec" },
 			},
 		},
 	},
