@@ -46,7 +46,7 @@ return {
 			mapKey("<leader>fg", builtin.live_grep)
 			mapKey("<leader>fb", builtin.buffers)
 			mapKey("<leader>ft", "<Cmd>TodoTelescope<CR>")
-			mapKey("<leader>fh", builtin.help_tags)
+			-- mapKey("<leader>fh", builtin.help_tags) -- used in harpoon.lua
 			-- mapKey("fu", builtin.lsp_references)
 		end,
 	},
