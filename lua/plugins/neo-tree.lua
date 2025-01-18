@@ -3,14 +3,15 @@ return {
 		"stevearc/oil.nvim",
 		---@module 'oil'
 		---@type oil.SetupOpts
-		opts = {},
+		opts = {
+			delete_to_trash = true,
+			skip_confirm_for_simple_edits = true,
+		},
 		enabled = true,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
+		config = function(_, opts)
 			vim.keymap.set("n", "-", "<Cmd>Oil<CR>", { desc = "Open parent directory" })
-			require("oil").setup({
-				default_file_explorer = true,
-			})
+			require("oil").setup(opts)
 		end,
 	},
 	{
