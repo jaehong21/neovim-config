@@ -138,6 +138,11 @@ return {
 		end,
 	},
 	{
+		"wurli/contextindent.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		opts = { pattern = "*" },
+	},
+	{
 		"stevearc/aerial.nvim",
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
