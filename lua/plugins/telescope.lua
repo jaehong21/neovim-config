@@ -24,7 +24,15 @@ return {
 					find_files = {
 						-- theme = "dropdown",
 						hidden = true,
-						find_command = { "rg", "--files", "--smart-case", "-g", "!.git" },
+						find_command = {
+							"rg",
+							"--files",
+							"--smart-case",
+							"-g",
+							"!.git",
+							"-g",
+							"!node_modules",
+						},
 					},
 					-- live_grep = { theme = "dropdown" },
 					-- buffers = { theme = "dropdown" },
@@ -46,8 +54,8 @@ return {
 			mapKey("<leader>fg", builtin.live_grep)
 			mapKey("<leader>fb", builtin.buffers)
 			mapKey("<leader>ft", "<Cmd>TodoTelescope<CR>")
-			-- mapKey("<leader>fh", builtin.help_tags) -- used in harpoon.lua
-			-- mapKey("fu", builtin.lsp_references)
+			mapKey("<leader>fh", builtin.help_tags)
+			mapKey("<leader>fu", builtin.lsp_references)
 		end,
 	},
 }

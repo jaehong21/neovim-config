@@ -21,10 +21,8 @@ return {
 		"neovim/nvim-lspconfig",
 		optional = true,
 		opts = {
-			setup = {
-				["rust_analyzer"] = function()
-					return true
-				end,
+			servers = {
+				rust_analyzer = {},
 			},
 		},
 	},

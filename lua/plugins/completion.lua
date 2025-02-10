@@ -3,20 +3,17 @@ return {
 		"saghen/blink.compat",
 		version = "*",
 		lazy = true,
-		opts = {
-			sources = {
-				compat = { "avante_commands", "avante_mentions", "avante_files" },
-			},
-		},
+		---@module 'blink.compat'
+		---@type blink.compat.Config
+		opts = {},
 	},
 
 	{
 		"saghen/blink.cmp",
 		dependencies = {
-			"saghen/blink.compat",
-			-- optional: provides snippets for the snippet source
-			"rafamadriz/friendly-snippets",
-			{ "L3MON4D3/LuaSnip", version = "v2.*" },
+			"rafamadriz/friendly-snippets", -- optional: provides snippets for the snippet source
+			-- add source
+			"hrsh7th/cmp-nvim-lsp",
 		},
 		version = "*",
 		---@module 'blink.cmp'
@@ -45,36 +42,18 @@ return {
 				},
 				ghost_text = { enabled = true },
 			},
-			snippets = { preset = "luasnip" },
 			sources = {
-				-- you can extend it elsewhere in your config, without redefining it, due to `opts_extend`
 				default = {
 					"lsp",
 					"snippets",
 					"buffer",
 					"path",
-					"avante_commands",
-					"avante_mentions",
-					"avante_files",
 				},
+				-- https://cmp.saghen.dev/configuration/sources.html#provider-options
 				providers = {
-					avante_commands = {
-						name = "avante_commands",
-						module = "blink.compat.source",
-						score_offset = 90, -- show at a higher priority than lsp
-						opts = {},
-					},
-					avante_files = {
-						name = "avante_commands",
-						module = "blink.compat.source",
-						score_offset = 100, -- show at a higher priority than lsp
-						opts = {},
-					},
-					avante_mentions = {
-						name = "avante_mentions",
-						module = "blink.compat.source",
-						score_offset = 1000, -- show at a higher priority than lsp
-						opts = {},
+					lsp = {
+						name = "lsp",
+						module = "blink.compat.source", -- hrsh7th/cmp-nvim-lsp
 					},
 				},
 			},

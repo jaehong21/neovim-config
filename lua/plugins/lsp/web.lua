@@ -4,10 +4,16 @@ return {
 		opts = function(_, opts)
 			opts.ensure_installed = opts.ensure_installed or {}
 			vim.list_extend(opts.ensure_installed, {
+				"html",
+				"htmlbeautifier",
+				"htmx",
+				"cssls",
 				"prettier",
 				"prettierd",
 				"eslint_d",
-				"htmlbeautifier",
+				"ts_ls",
+				"svelte",
+				"tailwindcss",
 			})
 		end,
 	},
@@ -60,11 +66,26 @@ return {
 		opts = {
 			servers = {
 				html = {},
-				cssls = {},
-				htmx = {},
+				cssls = {
+					settings = {
+						css = {
+							validate = true,
+							lint = { unknownAtRules = "ignore" },
+						},
+						scss = {
+							validate = true,
+							lint = { unknownAtRules = "ignore" },
+						},
+						less = {
+							validate = true,
+							lint = { unknownAtRules = "ignore" },
+						},
+					},
+				},
+				-- htmx = {},
 				eslint = {},
 				ts_ls = {},
-				svelte = {},
+				-- svelte = {},
 				tailwindcss = {},
 			},
 		},

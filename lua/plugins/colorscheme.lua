@@ -38,8 +38,9 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
+			---@diagnostic disable-next-line: missing-fields
 			require("kanagawa").setup({ background = { dark = "wave" } })
-			-- vim.cmd("colorscheme kanagawa")
+			vim.cmd("colorscheme kanagawa")
 		end,
 		opts = {},
 	},
@@ -77,9 +78,10 @@ return {
 					noice = true,
 					cmp = true,
 					notify = true,
+					blink_cmp = true,
 				},
 			})
-			vim.cmd("colorscheme catppuccin")
+			-- vim.cmd("colorscheme catppuccin")
 		end,
 	},
 }
