@@ -20,10 +20,16 @@ return {
 		---@type blink.cmp.Config
 		opts = {
 			-- https://cmp.saghen.dev/configuration/keymap.html#presets
+			---@diagnostic disable-next-line: assign-type-mismatch
 			keymap = {
 				preset = "enter", -- "default" | "super-tab" | "enter"
-				cmdline = { preset = "super-tab" },
 			},
+			cmdline = {
+				keymap = {
+					preset = "super-tab",
+				},
+			},
+
 			appearance = {
 				nerd_font_variant = "mono", -- "normal" | "mono"
 				use_nvim_cmp_as_default = false,
