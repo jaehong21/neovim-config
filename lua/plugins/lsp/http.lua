@@ -10,7 +10,7 @@ return {
 		end,
 	},
 
-	{
+	--[[ {
 		"mistweaverco/kulala.nvim",
 		opts = {
 			default_view = "body",
@@ -35,5 +35,5 @@ return {
 
 			vim.filetype.add({ extension = { ["http"] = "http" } })
 		end,
-	},
+	} ]]
 }
