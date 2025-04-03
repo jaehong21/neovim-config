@@ -42,7 +42,7 @@ return {
 		-- https://github.com/yetone/avante.nvim/blob/main/lua/avante/config.lua
 		opts = {
 			---@alias avante.nvim.Provider "claude" | "openai" | "azure" | "gemini" | "vertex" | "cohere" | "copilot" | string
-			provider = "groq",
+			provider = "openrouter",
 			openai = {
 				-- api_key_name = "OPENAI_API_KEY",
 				-- model = "gpt-4o",
@@ -61,7 +61,7 @@ return {
 					__inherited_from = "openai",
 					api_key_name = "OPENROUTER_API_KEY",
 					endpoint = "https://openrouter.ai/api/v1",
-					model = "deepseek/deepseek-chat", -- "deepseek/deepseek-chat" | "openai/chatgpt-4o-latest" | "anthropic/claude-3.5-sonnet"
+					model = "openai/gpt-4o-2024-11-20", -- "deepseek/deepseek-v3-0324:free" | "anthropic/claude-3.7-sonnet:thinking"
 				},
 			},
 			file_selector = {

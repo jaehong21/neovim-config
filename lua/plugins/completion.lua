@@ -11,6 +11,7 @@ return {
 	{
 		"saghen/blink.cmp",
 		dependencies = {
+			"Kaiser-Yang/blink-cmp-avante", -- must loaded before blink.cmp
 			"rafamadriz/friendly-snippets", -- optional: provides snippets for the snippet source
 			-- add source
 			"hrsh7th/cmp-nvim-lsp",
@@ -46,10 +47,11 @@ return {
 					auto_show_delay_ms = 0,
 					treesitter_highlighting = true,
 				},
-				ghost_text = { enabled = true },
+				ghost_text = { enabled = false },
 			},
 			sources = {
 				default = {
+					"avante",
 					"lsp",
 					"snippets",
 					"buffer",
@@ -57,6 +59,12 @@ return {
 				},
 				-- https://cmp.saghen.dev/configuration/sources.html#provider-options
 				providers = {
+					-- https://github.com/Kaiser-Yang/blink-cmp-avante?tab=readme-ov-file#lazynvim
+					avante = {
+						module = "blink-cmp-avante",
+						name = "Avante",
+						opts = {},
+					},
 					lsp = {
 						name = "lsp",
 						module = "blink.compat.source", -- hrsh7th/cmp-nvim-lsp
