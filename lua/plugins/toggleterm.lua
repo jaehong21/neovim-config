@@ -16,5 +16,10 @@ return {
 		vim.keymap.set({ "n", "t" }, "<leader>gl", function()
 			lazygit:toggle()
 		end, { noremap = true, silent = true, desc = "[G]it with [L]azygit" })
+
+		local hibiscus = Terminal:new({ cmd = "hibiscus", hidden = true, direction = "float" })
+		vim.keymap.set({ "n", "t" }, "<leader>hb", function()
+			hibiscus:toggle()
+		end, { noremap = true, silent = true, desc = "[H]i[B]iscus" })
 	end,
 }
