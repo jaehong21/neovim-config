@@ -23,17 +23,6 @@ return {
 		opts = {},
 	},
 	{
-		"scottmckendry/cyberdream.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("cyberdream").setup({
-				transparent = false,
-			})
-			-- vim.cmd("colorscheme cyberdream")
-		end,
-	},
-	{
 		"rebelot/kanagawa.nvim",
 		lazy = false,
 		priority = 1000,
