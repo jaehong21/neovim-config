@@ -15,8 +15,11 @@ return {
 					-- vimgrep_arguments = { 'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', },
 					mappings = {
 						i = { -- insert mode
-							["<C-j>"] = require("telescope.actions").move_selection_next,
-							["<C-k>"] = require("telescope.actions").move_selection_previous,
+							-- ["<C-j>"] = require("telescope.actions").move_selection_next,
+							-- ["<C-k>"] = require("telescope.actions").move_selection_previous,
+							-- insert mode, for Colemak-DH
+							["<C-n>"] = require("telescope.actions").move_selection_next,
+							["<C-e>"] = require("telescope.actions").move_selection_previous,
 						},
 					},
 				},
