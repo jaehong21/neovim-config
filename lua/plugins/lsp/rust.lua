@@ -19,11 +19,19 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
-		optional = true,
 		opts = {
-			servers = {
-				rust_analyzer = {},
+			-- Ensure that the `rust_analyzer` server is installed manually
+			-- `rustup component add rust-analyzer`
+			setup = {
+				rust_analyzer = function()
+					return true
+				end,
 			},
+			-- servers = {
+			-- 	rust_analyzer = function()
+			-- 		return true
+			-- 	end,
+			-- },
 		},
 	},
 
