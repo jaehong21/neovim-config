@@ -19,11 +19,11 @@ mapKey("<leader>vs", "<Cmd>vsplit<CR>", "n")
 -- mapKey("<S-h>", "<Cmd>bprev<CR>", "n") -- Previous buffer
 -- mapKey("<S-l>", "<Cmd>bnext<CR>", "n") -- Next buffer
 mapKey("<leader>q", "<Cmd>bd<CR>", "n") -- Close pane
-mapKey("<leader><leader>", "<C-^>")     -- Move to last buffer
+mapKey("<leader><leader>", "<C-^>") -- Move to last buffer
 
 -- buffer navigation (Colemak-DH)
 mapKey("<S-m>", "<Cmd>bprev<CR>", "n") -- Previous buffer
-mapKey("<S-i>", "<Cmd>bnext<CR>", "n") -- Next buffer
+mapKey("<S-o>", "<Cmd>bnext<CR>", "n") -- Next buffer (as Shitt+i is for Insert mode, setting as Shift+o)
 
 -- clear search highlight
 mapKey("<leader>h", ":nohlsearch<CR>")
@@ -45,7 +45,7 @@ mapKey("e", "k", "n")
 -- mapKey("m", "h", "n")
 -- mapKey("i", "l", "n") -- Not setting this to avoid contlict for `Insert` mode
 
-mapKey("<C-n>", "n", "n") -- Mapping Ctrl+n to next search result
+mapKey("<S-n>", "n", "n") -- Mapping Shift+n to next search result (Originally previous search result)
 
 mapKey("n", "j", "v")
 mapKey("e", "k", "v")
