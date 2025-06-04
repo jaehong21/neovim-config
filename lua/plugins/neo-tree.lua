@@ -1,6 +1,6 @@
 return {
 	"nvim-neo-tree/neo-tree.nvim",
-	enabled = false,
+	enabled = true,
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -12,6 +12,9 @@ return {
 		window = {
 			position = "left",
 			width = 35,
+			mappings = {
+				["e"] = "noop", -- Disable 'e' key mapping to prevent conflicts with remaps withe Colemak-DH layout.
+			},
 		},
 		filesystem = {
 			filtered_items = {
