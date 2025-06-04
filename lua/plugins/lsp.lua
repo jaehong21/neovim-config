@@ -64,12 +64,13 @@ return {
 				ensure_installed = servers,
 			})
 
+			--[[
 			local lspconfig = require("lspconfig")
 			for server, server_opts in pairs(servers) do
-				-- server_opts.capabilities =
-				--   require("cmp_nvim_lsp").default_capabilities(server_opts.capabilities)
+				-- server_opts.capabilities = require("cmp_nvim_lsp").default_capabilities(server_opts.capabilities)
 				lspconfig[server].setup(server_opts)
 			end
+      --]]
 		end,
 	},
 }
