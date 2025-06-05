@@ -4,6 +4,31 @@ return {
 		lazy = false,
 		cmd = "Copilot",
 	},
+
+	{
+		"coder/claudecode.nvim",
+		dependencies = {
+			"folke/snacks.nvim",
+		},
+		config = true,
+		-- https://github.com/coder/claudecode.nvim/tree/main?tab=readme-ov-file#advanced-setup
+		opts = {
+			terminal = {
+				split_side = "right",
+				split_width_percentage = 0.3,
+				provider = "snacks", -- "snacks" | "native"
+			},
+			diff_opts = {
+				auto_close_on_accept = true,
+				vertical_split = true,
+			},
+		},
+		keys = {
+			{ "<leader>cc", "<cmd>ClaudeCode<cr>", desc = "Toggle Claude" },
+			{ "<leader>cs", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
+		},
+	},
+
 	{
 		"yetone/avante.nvim",
 		event = "VeryLazy",
