@@ -7,6 +7,7 @@ return {
 
 	{
 		"coder/claudecode.nvim",
+		enabled = false,
 		dependencies = {
 			"folke/snacks.nvim",
 		},
@@ -31,6 +32,7 @@ return {
 
 	{
 		"yetone/avante.nvim",
+		enabled = false,
 		event = "VeryLazy",
 		lazy = false,
 		version = "*", -- '*' for latest | 'false' for release
