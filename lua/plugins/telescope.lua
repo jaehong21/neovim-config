@@ -35,6 +35,8 @@ return {
 							"!.git",
 							"-g",
 							"!node_modules",
+							"-g",
+							"!target",
 						},
 					},
 					-- live_grep = { theme = "dropdown" },
