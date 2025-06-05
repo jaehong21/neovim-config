@@ -13,7 +13,7 @@ return {
 			position = "left",
 			width = 35,
 			mappings = {
-				["e"] = "noop", -- Disable 'e' key mapping to prevent conflicts with remaps withe Colemak-DH layout.
+				-- ["e"] = "noop", -- Disable 'e' key mapping to prevent conflicts with remaps withe Colemak-DH layout.
 			},
 		},
 		filesystem = {
