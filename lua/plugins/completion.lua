@@ -1,20 +1,8 @@
 return {
 	{
-		"saghen/blink.compat",
-		version = "*",
-		lazy = true,
-		---@module 'blink.compat'
-		---@type blink.compat.Config
-		opts = {},
-	},
-
-	{
 		"saghen/blink.cmp",
 		dependencies = {
-			"Kaiser-Yang/blink-cmp-avante", -- must loaded before blink.cmp
 			"rafamadriz/friendly-snippets", -- optional: provides snippets for the snippet source
-			-- add source
-			"hrsh7th/cmp-nvim-lsp",
 		},
 		version = "*",
 		---@module 'blink.cmp'
@@ -51,26 +39,13 @@ return {
 			},
 			sources = {
 				default = {
-					"avante",
 					"lsp",
-					"snippets",
 					"buffer",
+					"snippets",
 					"path",
 				},
-				-- https://cmp.saghen.dev/configuration/sources.html#provider-options
-				providers = {
-					-- https://github.com/Kaiser-Yang/blink-cmp-avante?tab=readme-ov-file#lazynvim
-					avante = {
-						module = "blink-cmp-avante",
-						name = "Avante",
-						opts = {},
-					},
-					lsp = {
-						name = "lsp",
-						module = "blink.compat.source", -- hrsh7th/cmp-nvim-lsp
-					},
-				},
 			},
+			fuzzy = { implementation = "prefer_rust_with_warning" },
 			-- https://cmp.saghen.dev/configuration/reference.html#signature
 			signature = { enabled = true },
 		},
