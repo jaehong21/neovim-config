@@ -22,23 +22,20 @@ return {
 		opts = {
 			-- Ensure that the `rust_analyzer` server is installed manually
 			-- `rustup component add rust-analyzer`
-			setup = {
-				rust_analyzer = function()
-					return true
-				end,
-			},
-			-- servers = {
+			-- setup = {
 			-- 	rust_analyzer = function()
 			-- 		return true
 			-- 	end,
 			-- },
+			servers = {
+				rust_analyzer = {},
+			},
 		},
 	},
 
 	{
 		"mrcjkb/rustaceanvim",
 		version = "^5",
-		ft = { "rust" },
 		lazy = false,
 	},
 
