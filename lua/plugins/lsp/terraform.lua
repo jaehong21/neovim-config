@@ -31,7 +31,7 @@ return {
 		optional = true,
 		opts = {
 			formatters_by_ft = {
-				hcl = { "hclfmt" },
+				-- hcl = { "hclfmt" },
 				terraform = { "terraform_fmt" },
 				terragrunt = { "terragrunt_hclfmt" },
 			},
