@@ -6,7 +6,6 @@ return {
 			vim.list_extend(opts.ensure_installed, {
 				"html",
 				"htmlbeautifier",
-				"htmx",
 				"cssls",
 				"prettier",
 				"prettierd",
@@ -25,7 +24,6 @@ return {
 			vim.list_extend(opts.ensure_installed, {
 				"html",
 				"css",
-				"htmx",
 				"jsx",
 				"tsx",
 				"javascript",
@@ -50,10 +48,10 @@ return {
 				},
 			},
 			formatters_by_ft = {
-				javascript = { "eslint_d", "prettierd" },
-				typescript = { "eslint_d", "prettierd" },
-				javascriptreact = { "eslint_d", "prettierd" },
-				typescriptreact = { "eslint_d", "prettierd" },
+				javascript = { "prettierd" },
+				typescript = { "prettierd" },
+				javascriptreact = { "prettierd" },
+				typescriptreact = { "prettierd" },
 				html = { "htmlbeautifier" },
 				css = { "prettierd" },
 			},
@@ -62,7 +60,6 @@ return {
 
 	{
 		"neovim/nvim-lspconfig",
-		optional = true,
 		opts = {
 			servers = {
 				html = {},
@@ -82,7 +79,6 @@ return {
 						},
 					},
 				},
-				-- htmx = {},
 				eslint = {},
 				ts_ls = {},
 				-- svelte = {},
