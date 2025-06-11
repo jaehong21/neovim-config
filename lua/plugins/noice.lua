@@ -12,11 +12,10 @@ return {
 		},
 		config = function()
 			require("noice").setup({
-				lsp = {
-					progress = { enabled = true, view = "mini" },
-					signature = { enabled = false },
-					hover = { enabled = false },
-					message = { enabled = false },
+				presets = {
+					long_message_to_split = true,
+					inc_rename = true,
+					lsp_doc_border = true, -- add a border to hover docs and signature help
 				},
 			})
 		end,
