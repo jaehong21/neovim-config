@@ -29,7 +29,8 @@ return {
 		optional = true,
 		opts = {
 			formatters_by_ft = {
-				python = { "isort", "ruff_format", "black" },
+				-- python = { "isort", "ruff_format", "black" },
+				python = { "ruff_format" },
 			},
 		},
 	},
@@ -44,11 +45,11 @@ return {
 						pylsp = {
 							plugins = {
 								pycodestyle = {
-									enabled = true,
+									enabled = false,
 									ignore = { "E501" }, -- Ignore line length warnings
 								},
 								pyflakes = {
-									enabled = true,
+									enabled = false,
 									ignore = { "unknown-attribute" },
 								},
 							},
