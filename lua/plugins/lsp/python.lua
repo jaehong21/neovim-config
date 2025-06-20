@@ -40,22 +40,22 @@ return {
 		optional = true,
 		opts = {
 			servers = {
-				pylsp = {
-					settings = {
-						pylsp = {
-							plugins = {
-								pycodestyle = {
-									enabled = false,
-									ignore = { "E501" }, -- Ignore line length warnings
-								},
-								pyflakes = {
-									enabled = false,
-									ignore = { "unknown-attribute" },
-								},
-							},
-						},
-					},
-				},
+				-- pylsp = {
+				-- 	settings = {
+				-- 		pylsp = {
+				-- 			plugins = {
+				-- 				pycodestyle = {
+				-- 					enabled = false,
+				-- 					ignore = { "E501" }, -- Ignore line length warnings
+				-- 				},
+				-- 				pyflakes = {
+				-- 					enabled = false,
+				-- 					ignore = { "unknown-attribute" },
+				-- 				},
+				-- 			},
+				-- 		},
+				-- 	},
+				-- },
 				pyright = {},
 			},
 		},
@@ -81,6 +81,7 @@ return {
 		end,
 	},
 
+	--[[
 	{
 		"mfussenegger/nvim-dap-python",
 		keys = {
@@ -101,7 +102,7 @@ return {
 				ft = "python",
 			},
 		},
-	},
+	}, ]]
 
 	--[[ {
 		"hrsh7th/nvim-cmp",
