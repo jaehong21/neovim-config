@@ -1,16 +1,16 @@
 return {
 	{
 		"folke/trouble.nvim",
-		version = "v2.*",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {
-			position = "bottom",
-			height = 30,
-			auto_close = true,
+		opts = {},
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xx",
+				-- "<Cmd>Trouble diagnostics toggle<CR>",
+				"<Cmd>Trouble diagnostics toggle focus=false<CR>",
+				desc = "Trouble",
+			},
 		},
-		config = function()
-			vim.keymap.set("n", "tt", "<Cmd>TroubleToggle<CR>")
-		end,
 	},
 	{
 		"folke/todo-comments.nvim",
