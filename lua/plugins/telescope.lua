@@ -58,7 +58,8 @@ return {
 			mapKey("<leader>ff", builtin.find_files)
 			mapKey("<leader>fg", builtin.live_grep)
 			mapKey("<leader>fb", builtin.buffers)
-			mapKey("<leader>ft", "<Cmd>TodoTelescope<CR>")
+			-- mapKey("<leader>ft", "<Cmd>TodoTelescope<CR>")
+			mapKey("<leader>ft", builtin.lsp_document_symbols)
 			mapKey("<leader>fh", builtin.help_tags)
 			mapKey("<leader>fu", builtin.lsp_references)
 		end,
