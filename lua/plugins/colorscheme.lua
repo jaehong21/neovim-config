@@ -29,7 +29,7 @@ return {
 		config = function()
 			---@diagnostic disable-next-line: missing-fields
 			require("kanagawa").setup({ background = { dark = "wave" } })
-			vim.cmd("colorscheme kanagawa")
+			-- vim.cmd("colorscheme kanagawa")
 		end,
 		opts = {},
 	},
@@ -55,22 +55,32 @@ return {
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
-				flavour = "frappe", -- auto, latte, frappe, macchiato, mocha
-				-- background = {
-				-- 	light = "frappe",
-				-- 	dark = "frappe",
-				-- },
-				transparent_background = false,
+				flavour = "macchiato", -- auto, latte, frappe, macchiato, mocha
+				background = {
+					light = "macchiato",
+					dark = "macchiato",
+				},
+				transparent_background = true,
+				-- https://github.com/catppuccin/nvim#integrations
 				integrations = {
+					aerial = true,
+					alpha = true,
+					barbar = true,
+					blink_cmp = true,
+					cmp = true, -- nvim-cmp
 					harpoon = true,
+					indent_blankline = {
+						enabled = true,
+						colored_indent_levels = true,
+					},
+					mason = false,
 					neotree = true,
 					noice = true,
-					cmp = true,
 					notify = true,
-					blink_cmp = true,
+					which_key = true,
 				},
 			})
-			-- vim.cmd("colorscheme catppuccin")
+			vim.cmd("colorscheme catppuccin")
 		end,
 	},
 }
