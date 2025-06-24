@@ -49,10 +49,10 @@ return {
 						completion = true,
 						validate = true,
 						schemas = {
-							kubernetes = "*.yaml",
+							-- kubernetes = "*.yaml",
 							-- ["https://raw.githubusercontent.com/SchemaStore/schemastore/master/src/schemas/json/github-workflow.json"] = "/.*/workflows/*",
-							["https://json.schemastore.org/github-workflow"] = ".github/workflows/*",
-							["https://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
+							-- ["https://json.schemastore.org/github-workflow"] = ".github/workflows/*",
+							-- ["https://json.schemastore.org/chart"] = "Chart.{yml,yaml}",
 							["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "*docker-compose*.{yml,yaml}",
 							-- ["https://json.schemastore.org/github-workflow.json"] = "/.*/workflows/*",
 							-- ["https://goreleaser.com/static/schema.json"] = ".goreleaser.yaml",
