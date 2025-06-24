@@ -12,6 +12,8 @@ return {
 			vim.highlight.priorities.semantic_tokens = 99
 		end,
 		config = function(_, opts)
+			vim.lsp.inlay_hint.enable(true)
+
 			---@diagnostic disable-next-line: unused-local
 			local on_attach = function(client, bufnr)
 				local nmap = function(keys, func, desc)
@@ -27,7 +29,8 @@ return {
 				nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 				-- nmap("<leader>ca", "<cmd>CodeActionMenu<cr>", "[C]ode [A]ction")
 
-				nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+				-- nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+				nmap("gd", "<Cmd>Telescope lsp_definitions<CR>", "[G]oto [D]efinition")
 				-- nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 				nmap("gu", "<Cmd>Telescope lsp_references<CR>", "[G]oto [R]eferences")
 				nmap("gi", "<Cmd>Telescope lsp_implementations<CR>", "[G]oto [I]mplementation")
