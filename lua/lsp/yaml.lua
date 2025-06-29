@@ -1,6 +1,5 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/yamlls.lua
 vim.lsp.enable("yamlls")
-
 vim.lsp.config("yamlls", {
 	filetypes = { "yaml", "yml" },
 	settings = {
@@ -20,8 +19,6 @@ vim.lsp.config("yamlls", {
 					"**/deployment.yaml",
 					-- "**/service.yaml",
 				},
-				["https://www.schemastore.org/package.json"] = "package.json",
-				["https://www.schemastore.org/tsconfig.json"] = "tsconfig.json",
 				["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose*.{yml,yaml}",
 			},
 			schemaStore = {
