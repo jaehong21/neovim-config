@@ -10,17 +10,39 @@ return {
 			--  If not available, we use `mini` as the fallback
 			-- "rcarriga/nvim-notify",
 		},
-		config = function()
-			require("noice").setup({
-				presets = {
-					long_message_to_split = true,
-					inc_rename = true,
-					lsp_doc_border = true, -- add a border to hover docs and signature help
+		opts = {
+			presets = {
+				bottom_search = false,
+				command_palette = false,
+				long_message_to_split = true,
+				inc_rename = true,
+				lsp_doc_border = true, -- add a border to hover docs and signature help
+			},
+
+			cmdline = {
+				format = {
+					cmdline = { pattern = "^:", icon = ">_", lang = "vim" },
 				},
-			})
-		end,
+			},
+		},
+		--[[ config = function()
+      require("noice").setup({
+        presets = {
+          bottom_search = true,
+          command_palette = false,
+          long_message_to_split = true,
+          inc_rename = false,
+          lsp_doc_border = true, -- add a border to hover docs and signature help
+        },
+
+        cmdline = {
+          enabled = true,
+          cmdline = { pattern = "^:", icon = ">_", lang = "vim" },
+        },
+      })
+    end, ]]
 	},
-	{
+	--[[ {
 		"rcarriga/nvim-notify",
 		enabled = false,
 		opts = {
@@ -41,5 +63,5 @@ return {
 				on_open = opts.on_open,
 			})
 		end,
-	},
+	}, ]]
 }

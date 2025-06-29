@@ -1,5 +1,6 @@
 return {
 	"stevearc/oil.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons" },
 	---@module 'oil'
 	---@type oil.SetupOpts
 	opts = {
@@ -33,7 +34,7 @@ return {
 		-- Set to false to disable all of the above keymaps
 		use_default_keymaps = true,
 		view_options = {
-			show_hidden = false,
+			show_hidden = true,
 			is_hidden_file = function(name, bufnr)
 				local hidden_patterns = {
 					"^%.", -- files and directories starting with `.`
@@ -41,18 +42,13 @@ return {
 					"^node_modules/?$",
 				}
 				for _, pattern in ipairs(hidden_patterns) do
-					if name:match(pattern) then
-						return true
-					end
+					if name:match(pattern) then return true end
 				end
 				return false
 			end,
 		},
 	},
-	enabled = true,
-	dependencies = { "nvim-tree/nvim-web-devicons" },
-	config = function(_, opts)
-		vim.keymap.set("n", "-", "<Cmd>Oil<CR>", { desc = "Open parent directory" })
-		require("oil").setup(opts)
-	end,
+	keys = {
+		{ "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
+	},
 }
