@@ -1,6 +1,29 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/jsonls.lua
 vim.lsp.enable("jsonls")
 
+vim.lsp.config("jsonls", {
+	filetypes = { "json", "jsonc" },
+	settings = {
+		json = {
+			schemas = {
+				{
+					fileMatch = { "package.json" },
+					url = "https://www.schemastore.org/package.json",
+				},
+				{
+					fileMatch = { "tsconfig.json", "tsconfig.*.json" },
+					url = "https://www.schemastore.org/tsconfig.json",
+				},
+				{
+					fileMatch = { "deno.json" },
+					url = "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
+				},
+			},
+			validate = { enable = true },
+		},
+	},
+})
+
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
