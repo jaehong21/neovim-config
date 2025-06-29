@@ -1,15 +1,11 @@
-return {
-	{
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		opts = {
-			ensure_installed = {
-				"golangci-lint",
-				"gofumpt",
-				"goimports",
-			},
-		},
-	},
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/gopls.lua
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/golangci_lint_ls.lua
+vim.lsp.enable({
+	"gopls",
+	"golangci_lint_ls",
+})
 
+return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = function(_, opts)
@@ -24,10 +20,14 @@ return {
 
 	{
 		"stevearc/conform.nvim",
-		optional = true,
+		---@module "conform"
+		---@type conform.setupOpts
 		opts = {
 			formatters_by_ft = {
-				go = { "gofumpt", "goimports" },
+				go = {
+					"gofumpt",
+					-- "goimports",
+				},
 			},
 		},
 	},
@@ -37,16 +37,6 @@ return {
 		opts = {
 			linters_by_ft = {
 				go = { "golangcilint" },
-			},
-		},
-	},
-
-	{
-		"neovim/nvim-lspconfig",
-		opts = {
-			servers = {
-				gopls = {},
-				golangci_lint_ls = {},
 			},
 		},
 	},
