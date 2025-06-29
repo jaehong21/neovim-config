@@ -59,6 +59,7 @@ modern plugin manager for Neovim that provides:
         ├── dashboard.lua      # Start screen
         ├── explorer.lua       # File explorer
         ├── gitsigns.lua       # Git integrations
+        ├── harpoon.lua        # Quick file navigation
         ├── indent.lua         # Indentation guides
         ├── lualine.lua        # Status line
         ├── markdown-preview.lua # Markdown preview
