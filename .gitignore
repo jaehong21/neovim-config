@@ -1,6 +1,3 @@
-# binary
-*.jar
-
 # IDE and OS files
 .vscode
 .idea
