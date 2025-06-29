@@ -10,6 +10,7 @@ return {
 		lazygit = { enabled = true },
 		quickfile = { enabled = true },
 		scroll = { enabled = false },
+		words = { enabled = false },
 	},
 	keys = {
 		-- buffer
