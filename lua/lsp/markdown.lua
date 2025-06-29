@@ -3,7 +3,6 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		opts = function(_, opts)
 			-- set *.mdc to markdown
-			vim.treesitter.language.register("mdc", { "markdown" })
 			vim.api.nvim_create_autocmd({ "BufEnter", "BufNewFile" }, {
 				pattern = "*.mdc",
 				command = "set filetype=markdown",
