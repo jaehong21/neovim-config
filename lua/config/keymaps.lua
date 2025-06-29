@@ -1,4 +1,9 @@
-local mapKey = require("utils.keymapper").mapKey
+local mapKey = function(from, to, mode, opts)
+	local options = { noremap = true, silent = true }
+	mode = mode or "n" -- normal mode
+	if opts then options = vim.tbl_extend("force", options, opts) end
+	vim.keymap.set(mode, from, to, options)
+end
 
 -- pane navigation
 mapKey("<C-h>", "<C-w>h") -- Left
@@ -6,50 +11,25 @@ mapKey("<C-j>", "<C-w>j") -- Down
 mapKey("<C-k>", "<C-w>k") -- Up
 mapKey("<C-l>", "<C-w>l") -- Right
 
--- pane navigation (Colemak-DH)
--- mapKey("<C-m>", "<C-w>h") -- Left
--- mapKey("<C-n>", "<C-w>j") -- Down
--- mapKey("<C-e>", "<C-w>k") -- Up
--- mapKey("<C-i>", "<C-w>l") -- Right
-
 -- split
-mapKey("<leader>vs", "<Cmd>vsplit<CR>", "n")
+mapKey("<leader>vs", "<cmd>vsplit<cr>")
 
 -- buffer
-mapKey("<S-h>", "<Cmd>bprev<CR>", "n") -- Previous buffer
-mapKey("<S-l>", "<Cmd>bnext<CR>", "n") -- Next buffer
-mapKey("<leader>q", "<Cmd>bd<CR>", "n") -- Close pane
+-- mapKey("<leader>q", "<cmd>bd<cr>") -- Delete current buffer
+mapKey("<S-h>", "<cmd>bprev<cr>") -- Previous buffer
+mapKey("<S-l>", "<cmd>bnext<cr>") -- Next buffer
 mapKey("<leader><leader>", "<C-^>") -- Move to last buffer
 
--- buffer navigation (Colemak-DH)
--- mapKey("<S-m>", "<Cmd>bprev<CR>", "n") -- Previous buffer
--- mapKey("<S-o>", "<Cmd>bnext<CR>", "n") -- Next buffer (as Shitt+i is for Insert mode, setting as Shift+o)
-
 -- clear search highlight
-mapKey("<leader>h", ":nohlsearch<CR>")
+mapKey("<leader>h", ":nohlsearch<cr>")
 
 -- indent
 mapKey("<", "<gv", "v")
 mapKey(">", ">gv", "v")
 
 -- vertical resize
-mapKey("+", ":vertical resize +5<CR>")
-mapKey("_", ":vertical resize -5<CR>")
+mapKey("+", ":vertical resize +5<cr>")
+mapKey("_", ":vertical resize -5<cr>")
 
 -- Open github repo in browser
-mapKey("<leader>gh", "<Cmd>!gh repo view --web<CR>", "n")
-
--- Colemak-DH hjkl remap
---[[
-mapKey("n", "j", "n")
-mapKey("e", "k", "n")
-mapKey("m", "h", "n")
-mapKey("i", "l", "n") -- Not setting this to avoid contlict for `Insert` mode
-
-mapKey("<S-n>", "n", "n") -- Mapping Shift+n to next search result (Originally previous search result)
-
-mapKey("n", "j", "v")
-mapKey("e", "k", "v")
-mapKey("m", "h", "v")
-mapKey("i", "l", "v") -- Not setting this to avoid contlict for `Visual` mode
-]]
+-- mapKey("<leader>gh", "<cmd>!gh repo view --web<cr>", "n")
