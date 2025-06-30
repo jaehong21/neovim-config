@@ -2,6 +2,13 @@
 -- NOTE: `rust-analyzer` is enabled through `rustaceanvim` plugin
 -- vim.lsp.enable("rust_analyzer")
 
+-- https://github.com/mrcjkb/rustaceanvim?tab=readme-ov-file#gear-advanced-configuration
+vim.lsp.config("rust_analyzer", {
+	settings = {
+		["rust-analyzer"] = {},
+	},
+})
+
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
