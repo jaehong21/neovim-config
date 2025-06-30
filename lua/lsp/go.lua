@@ -52,7 +52,7 @@ return {
 			linters_by_ft = {
 				go = { "golangcilint" },
 			},
-			linters = {
+			--[[ linters = {
 				golangcilint = {
 					-- https://www.reddit.com/r/neovim/comments/1jorqmd/comment/mkw62o1
 					args = {
@@ -62,7 +62,7 @@ return {
 						-- "--issues-exit-code", "0",
 					},
 				},
-			},
+			}, ]]
 		},
 	},
 }
