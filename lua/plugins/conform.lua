@@ -6,7 +6,7 @@ return {
 	opts = {
 		-- https://github.com/stevearc/conform.nvim?tab=readme-ov-file#formatters
 		format_after_save = {
-			lsp_format = "fallback",
+			lsp_format = "never",
 			async = true,
 			timeout_ms = 500,
 		},
