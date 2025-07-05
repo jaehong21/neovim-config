@@ -18,6 +18,10 @@ vim.lsp.config("jsonls", {
 					fileMatch = { "deno.json" },
 					url = "https://raw.githubusercontent.com/denoland/deno/main/cli/schemas/config-file.v1.json",
 				},
+				{
+					fileMatch = { ".claude/settings.json", ".claude/settings.local.json" },
+					url = "https://www.schemastore.org/claude-code-settings.json",
+				},
 			},
 			validate = { enable = true },
 		},
