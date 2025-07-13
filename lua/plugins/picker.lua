@@ -30,11 +30,14 @@ return {
 				frecency = true, -- frecency bonus
 				history_bonus = true, -- give more weight to chronological order
 			},
+
+			ui_select = true, -- replace `vim.ui.select` with the snacks picker
+
 			---@class snacks.picker.formatters.Config
 			formatters = {
 				file = {
 					filename_first = false,
-					truncate = 60, -- default: 40
+					truncate = 80, -- default: 40
 				},
 			},
 		},
