@@ -18,7 +18,7 @@ return {
 				end
 
 				nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-				nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+				-- nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 			end
 
 			vim.api.nvim_create_autocmd("LspAttach", {
