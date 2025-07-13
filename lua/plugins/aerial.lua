@@ -8,6 +8,8 @@ return {
 		-- https://github.com/stevearc/aerial.nvim?tab=readme-ov-file#options
 		require("aerial").setup({
 			-- backends = { "treesitter", "lsp", "markdown", "asciidoc", "man" }, -- default
+			backends = { "treesitter", "lsp" },
+
 			layout = {
 				min_width = { 30, 0.1 }, -- bigger than 30 columns or 10% of total
 			},
