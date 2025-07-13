@@ -1,12 +1,49 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/html.lua
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/cssls.lua
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/vtsls.lua
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/ts_ls.lua
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/tailwindcss.lua
 vim.lsp.enable({
 	"html",
 	"cssls",
 	"vtsls",
+	-- "ts_ls",
 	"tailwindcss",
+})
+
+-- https://zed.dev/docs/languages/typescript#inlay-hints
+local inlay_hints_settings = {
+	parameterNames = {
+		enabled = "all",
+		suppressWhenArgumentMatchesName = false,
+	},
+	parameterTypes = {
+		enabled = false,
+	},
+	variableTypes = {
+		enabled = false,
+		suppressWhenTypeMatchesName = true,
+	},
+	propertyDeclarationTypes = {
+		enabled = true,
+	},
+	functionLikeReturnTypes = {
+		enabled = false,
+	},
+	enumMemberValues = {
+		enabled = false,
+	},
+}
+
+vim.lsp.config("vtsls", {
+	settings = {
+		javascript = {
+			inlayHints = inlay_hints_settings,
+		},
+		typescript = {
+			inlayHints = inlay_hints_settings,
+		},
+	},
 })
 
 return {
