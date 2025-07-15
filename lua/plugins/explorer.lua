@@ -15,6 +15,9 @@ return {
 					focus = "list", -- "input" | "list"
 					layout = {
 						auto_hide = { "input" },
+						layout = {
+							width = 35,
+						},
 					},
 				},
 			},
