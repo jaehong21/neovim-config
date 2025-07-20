@@ -42,6 +42,6 @@ require("lazy").setup({
 		{ import = "lsp" },
 	},
 	checker = {
-		enabled = true, -- check for plugin updates periodically
+		enabled = false, -- check for plugin updates periodically
 	},
 })
