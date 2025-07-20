@@ -1,5 +1,10 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/yamlls.lua
-vim.lsp.enable("yamlls")
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/helm_ls.lua
+vim.lsp.enable({
+	"yamlls",
+	"helm_ls",
+})
+
 vim.lsp.config("yamlls", {
 	filetypes = { "yaml", "yml" },
 	settings = {
@@ -21,9 +26,16 @@ vim.lsp.config("yamlls", {
 				},
 				["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose*.{yml,yaml}",
 			},
-			schemaStore = {
-				enable = true,
-				url = "https://www.schemastore.org/json",
+		},
+	},
+})
+
+vim.lsp.config("helm_ls", {
+	settings = {
+		["helm-ls"] = {
+			yamlls = {
+				enabled = false,
+				validate = false,
 			},
 		},
 	},
@@ -34,9 +46,28 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		opts = function(_, opts)
 			opts.ensure_installed = opts.ensure_installed or {}
-			vim.list_extend(opts.ensure_installed, { "yaml" })
+			vim.list_extend(opts.ensure_installed, {
+				"yaml",
+				"helm",
+			})
 		end,
 	},
+
+	{
+		-- for Helm file syntax highlighting
+		"towolf/vim-helm",
+		ft = "helm",
+	},
+
+	--[[ {
+		"qvalentin/helm-ls.nvim",
+		ft = "helm",
+		opts = {
+			conceal_templates = {
+				enabled = false,
+			},
+		},
+	}, ]]
 
 	{
 		"stevearc/conform.nvim",
