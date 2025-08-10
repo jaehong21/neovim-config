@@ -7,7 +7,8 @@ return {
 		},
 	},
 	keys = {
-		{ "<leader>hi", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Git: [P]review Hunk [I]nline" },
+		{ "<leader>hi", "<cmd>Gitsigns preview_hunk_inline<cr>", desc = "Git: Preview [H]unk [I]nline" },
+		{ "<leader>hr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Git: [H]unk [R]eset" },
 		-- blame is not closed by `Snacks.bufdelete()`
 		-- { "<leader>hb", "<cmd>Gitsigns blame<cr>", desc = "Git: [P]review [B]lame" },
 	},
