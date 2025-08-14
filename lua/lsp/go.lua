@@ -46,23 +46,23 @@ return {
 		},
 	},
 
-	{
+	--[[ {
 		"mfussenegger/nvim-lint",
 		opts = {
 			linters_by_ft = {
 				go = { "golangcilint" },
 			},
-			--[[ linters = {
-				golangcilint = {
-					-- https://www.reddit.com/r/neovim/comments/1jorqmd/comment/mkw62o1
-					args = {
-						"run",
-						"--output.json.path=stdout",
-						"--show-stats=false",
-						-- "--issues-exit-code", "0",
-					},
-				},
-			}, ]]
+			-- linters = {
+			-- 	golangcilint = {
+			-- 		-- https://www.reddit.com/r/neovim/comments/1jorqmd/comment/mkw62o1
+			-- 		args = {
+			-- 			"run",
+			-- 			"--output.json.path=stdout",
+			-- 			"--show-stats=false",
+			-- 			-- "--issues-exit-code", "0",
+			-- 		},
+			-- 	},
+			-- },
 		},
-	},
+	}, ]]
 }

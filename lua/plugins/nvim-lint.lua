@@ -3,10 +3,8 @@ return {
 	enabled = false,
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {
-		linters_by_ft = {
-			dockerfile = { "hadolint" },
-		},
-		-- linters = {},
+		linters_by_ft = {},
+		linters = {},
 	},
 	config = function(_, opts)
 		local lint = require("lint")
