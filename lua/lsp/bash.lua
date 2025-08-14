@@ -1,5 +1,12 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/bashls.lua
 vim.lsp.enable("bashls")
+vim.lsp.config("bashls", {
+	settings = {
+		bashIde = {
+			shellcheckArguments = "--exclude=SC2034", -- Ignore unused variables
+		},
+	},
+})
 
 return {
 	{
@@ -20,4 +27,25 @@ return {
 			},
 		},
 	},
+
+	--[[ {
+		"mfussenegger/nvim-lint",
+		opts = {
+			linters_by_ft = {
+				sh = { "shellcheck" },
+			},
+			linters = {
+				shellcheck = {
+					-- args = {
+					-- 	"-e",
+					-- 	"SC2034", -- Ignore unused variables
+					-- },
+					env = {
+						-- https://github.com/koalaman/shellcheck/wiki/Ignore#ignoring-errors
+						["SHELLCHECK_OPTS"] = "-e SC2034", -- Ignore unused variables
+					},
+				},
+			},
+		},
+	}, ]]
 }
