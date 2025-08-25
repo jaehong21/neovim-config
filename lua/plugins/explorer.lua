@@ -25,7 +25,7 @@ return {
 	},
 	keys = {
 		{ "<leader>e", function() Snacks.explorer.open() end, desc = "Open [E]xplorer" },
-		{ "<leader>fr", function() Snacks.explorer.open() end, desc = "[F]ile [R]eveal in Explorer" },
+		-- { "<leader>fr", function() Snacks.explorer.open() end, desc = "[F]ile [R]eveal in Explorer" },
 		-- { "<leader>fr", function() Snacks.explorer.reveal() end, desc = "[F]ile [R]eveal in Explorer" },
 	},
 }

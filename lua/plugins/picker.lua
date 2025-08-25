@@ -23,8 +23,7 @@ return {
 			},
 
 			---@class snacks.picker.matcher.Config
-			matcher = {
-				-- the bonusses below, possibly require string concatenation and path normalization,
+			matcher = { -- the bonusses below, possibly require string concatenation and path normalization,
 				-- so this can have a performance impact for large lists and increase memory usage
 				cwd_bonus = true, -- give bonus for matching files in the cwd
 				frecency = true, -- frecency bonus
@@ -58,6 +57,7 @@ return {
 		{ "<leader>fg", function() Snacks.picker.grep() end, desc = "[F]ind by [G]rep" },
 		{ "<leader>fb", function() Snacks.picker.buffers() end, desc = "[F]ind [B]uffers" },
 		{ "<leader>gb", function() Snacks.picker.git_branches() end, desc = "[G]it [B]ranches" },
+		{ "<leader>fr", function() Snacks.picker.recent() end, desc = "[F]ile [R]ecent" },
 		-- LSP
 		{ "gd", function() Snacks.picker.lsp_definitions() end, desc = "[G]oto [D]efinitions" },
 		{ "gu", function() Snacks.picker.lsp_references() end, desc = "[G]oto [U]sage" },
