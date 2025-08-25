@@ -4,7 +4,6 @@ return {
 		"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
 		"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
 	},
-	init = function() vim.g.barbar_auto_setup = false end,
 	opts = {
 		-- animation = false,
 
@@ -18,4 +17,13 @@ return {
 		-- new buffers will be inserted at the start/end of the list.
 		insert_at_end = true,
 	},
+	init = function()
+		vim.g.barbar_auto_setup = false
+		vim.keymap.set(
+			"n",
+			"<leader>bb",
+			"<cmd>BufferOrderByBufferNumber<cr>",
+			{ desc = "[B]uffer Order by [B]ufferNumber" }
+		)
+	end,
 }
