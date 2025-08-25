@@ -36,6 +36,13 @@ local inlay_hints_settings = {
 }
 
 vim.lsp.config("vtsls", {
+	-- root_dir = require("lspconfig.util").root_pattern(".git"),
+	root_dir = function(bufnr, on_dir)
+		local project_root_markers = { "package-lock.json", "yarn.lock", "pnpm-lock.yaml", "bun.lockb", "bun.lock" }
+		local project_root = vim.fs.root(bufnr, project_root_markers)
+		if not project_root then return end
+		on_dir(project_root)
+	end,
 	settings = {
 		javascript = {
 			inlayHints = inlay_hints_settings,
