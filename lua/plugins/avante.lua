@@ -1,6 +1,6 @@
 return {
 	"yetone/avante.nvim",
-	enabled = false,
+	-- enabled = false,
 	event = "VeryLazy",
 	version = false, -- Never set this value to "*"! Never!
 	build = "make",
@@ -14,6 +14,21 @@ return {
 				endpoint = "https://api.openai.com/v1",
 				model = "gpt-4.1",
 				api_key_name = "OPENAI_API_KEY",
+			},
+			["groq"] = {
+				__inherited_from = "openai",
+				endpoint = "https://api.groq.com/openai/v1",
+				model = "openai/gpt-oss-120b",
+				api_key_name = "GROQ_API_KEY",
+			},
+			["openrouter"] = {
+				__inherited_from = "openai",
+				endpoint = "https://openrouter.ai/api/v1",
+				model = "moonshotai/kimi-k2-0905",
+				api_key_name = "OPENROUTER_API_KEY",
+				extra_request_body = {
+					order = { "groq" },
+				},
 			},
 		},
 
