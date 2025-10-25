@@ -85,8 +85,8 @@ return {
 				},
 			},
 			formatters_by_ft = {
-				javascript = { "deno_fmt" },
-				typescript = { "deno_fmt" },
+				javascript = { "prettierd" },
+				typescript = { "prettierd" },
 				javascriptreact = { "deno_fmt" },
 				typescriptreact = { "deno_fmt" },
 				html = { "htmlbeautifier" },
