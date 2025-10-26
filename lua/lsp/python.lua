@@ -1,6 +1,16 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/pyright.lua
 vim.lsp.enable("pyright")
 
+-- vim.lsp.config("pyright", {
+-- 	settings = {
+-- 		python = {
+-- 			analysis = {
+-- 				typeCheckingMode = "off",
+-- 			},
+-- 		},
+-- 	},
+-- })
+
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
