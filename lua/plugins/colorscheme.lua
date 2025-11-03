@@ -1,5 +1,5 @@
 return {
-	{
+	--[[ {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		priority = 1000,
@@ -14,27 +14,21 @@ return {
 			},
 		},
 		config = function() vim.cmd("colorscheme tokyonight") end,
-	},
-	--[[ {
+	}, ]]
+	{
 		"catppuccin/nvim",
 		name = "catppuccin",
 		priority = 1000,
 		opts = {
 			flavour = "macchiato", -- auto, latte, frappe, macchiato, mocha
-			background = {
-				light = "macchiato",
-				dark = "macchiato",
-			},
 			transparent_background = true,
-			-- https://github.com/catppuccin/nvim#integrations
-			integrations = {
-				snacks = {
-					enabled = true,
-				},
-			},
+			auto_integrations = true,
 		},
-		config = function() vim.cmd("colorscheme catppuccin") end,
-	}, ]]
+		config = function(_, opts)
+			require("catppuccin").setup(opts)
+			vim.cmd("colorscheme catppuccin")
+		end,
+	},
 	--[[ {
 		"ellisonleao/gruvbox.nvim",
 		priority = 1000,
