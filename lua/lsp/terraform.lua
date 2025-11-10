@@ -27,7 +27,7 @@ return {
 		---@type conform.setupOpts
 		opts = {
 			formatters_by_ft = {
-				-- hcl = { "hclfmt" },
+				hcl = { "terragrunt_hclfmt" },
 				terraform = { "terraform_fmt" },
 				terragrunt = { "terragrunt_hclfmt" },
 			},

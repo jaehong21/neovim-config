@@ -30,7 +30,8 @@ return {
 		---@type conform.setupOpts
 		opts = {
 			formatters_by_ft = {
-				nix = { "nixpkgs_fmt" },
+				-- nix = { "nixpkgs_fmt" },
+				nix = { "nixfmt" },
 			},
 		},
 	},
