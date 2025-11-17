@@ -11,6 +11,11 @@ return {
 		opts = function(_, opts)
 			opts.ensure_installed = opts.ensure_installed or {}
 			vim.list_extend(opts.ensure_installed, { "dockerfile" })
+
+			-- Disable highlight for dockerfile if problematic
+			opts.highlight = opts.highlight or {}
+			opts.highlight.enable = true
+			opts.highlight.disable = { "dockerfile" }
 		end,
 	},
 
