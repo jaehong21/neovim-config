@@ -19,7 +19,32 @@ return {
 			},
 
 			layout = {
-				preset = "default", -- "default" | "vertical"
+				preset = "telescope",
+			},
+
+			layouts = {
+				telescope = {
+					-- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#telescope
+					layout = {
+						box = "horizontal",
+						backdrop = false,
+						width = 0.8,
+						height = 0.9,
+						border = "none",
+						{
+							box = "vertical",
+							{ win = "list", title = " Results ", title_pos = "center", border = true },
+							{ win = "input", height = 1, border = true, title = "{title} {live} {flags}", title_pos = "center" },
+						},
+						{
+							win = "preview",
+							title = "{preview:Preview}",
+							width = 0.5,
+							border = true,
+							title_pos = "center",
+						},
+					},
+				},
 			},
 
 			---@class snacks.picker.matcher.Config

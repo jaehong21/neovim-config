@@ -14,10 +14,9 @@ return {
 				explorer = {
 					focus = "list", -- "input" | "list"
 					layout = {
+						preset = "sidebar",
 						auto_hide = { "input" },
-						layout = {
-							width = 35,
-						},
+						layout = { width = 35 },
 					},
 				},
 			},
