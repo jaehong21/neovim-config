@@ -26,9 +26,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.loaded_tarPlugin = 1
-vim.g.loaded_tar = 1
-
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 vim.g.mapleader = " "
