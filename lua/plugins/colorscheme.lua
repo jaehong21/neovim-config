@@ -37,6 +37,7 @@ return {
 
 			-- https://github.com/folke/snacks.nvim/discussions/455#discussioncomment-11835458
 			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+			vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
 		end,
 	},
 	--[[ {
