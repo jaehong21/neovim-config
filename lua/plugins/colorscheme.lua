@@ -28,6 +28,8 @@ return {
 				return {
 					SnacksPickerBorder = { fg = colors.surface0 },
 					SnacksPickerInputTitle = { fg = colors.surface0 },
+					NormalFloat = { bg = "NONE" },
+					FloatBorder = { bg = "NONE" },
 				}
 			end,
 		},
@@ -36,8 +38,8 @@ return {
 			vim.cmd("colorscheme catppuccin")
 
 			-- https://github.com/folke/snacks.nvim/discussions/455#discussioncomment-11835458
-			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
-			vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
+			-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+			-- vim.api.nvim_set_hl(0, "FloatBorder", { bg = "NONE" })
 		end,
 	},
 	--[[ {
