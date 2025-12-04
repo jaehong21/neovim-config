@@ -1,15 +1,12 @@
 return {
 	"mfussenegger/nvim-lint",
-	enabled = false,
 	event = { "BufReadPre", "BufNewFile" },
-	opts = {
-		linters_by_ft = {},
-		linters = {},
-	},
 	config = function(_, opts)
 		local lint = require("lint")
+
 		-- Merge `opts.linters_by_ft`
-		lint.linters_by_ft = vim.tbl_deep_extend("force", lint.linters_by_ft, opts.linters_by_ft or {})
+		-- lint.linters_by_ft = vim.tbl_deep_extend("force", lint.linters_by_ft, opts.linters_by_ft or {})
+		lint.linters_by_ft = opts.linters_by_ft
 
 		-- Merge custom linter configurations
 		if opts.linters then
