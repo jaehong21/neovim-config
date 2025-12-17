@@ -1,5 +1,7 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/pyright.lua
-vim.lsp.enable("pyright")
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/ty.lua
+-- vim.lsp.enable("pyright")
+vim.lsp.enable("ty")
 
 -- vim.lsp.config("pyright", {
 -- 	settings = {
