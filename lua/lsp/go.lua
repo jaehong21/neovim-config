@@ -39,14 +39,15 @@ return {
 		opts = {
 			formatters_by_ft = {
 				go = {
-					"gofumpt",
+					"golangci-lint",
+					-- "gofumpt",
 					-- "goimports",
 				},
 			},
 		},
 	},
 
-	--[[ {
+	{
 		"mfussenegger/nvim-lint",
 		opts = {
 			linters_by_ft = {
@@ -64,5 +65,5 @@ return {
 			-- 	},
 			-- },
 		},
-	}, ]]
+	},
 }
