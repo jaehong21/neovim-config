@@ -94,6 +94,7 @@ return {
 				typescriptreact = { "deno_fmt" },
 				html = { "htmlbeautifier" },
 				css = { "deno_fmt" },
+				svelte = { "prettierd" },
 			},
 		},
 	},
