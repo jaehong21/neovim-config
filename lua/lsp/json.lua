@@ -22,6 +22,10 @@ vim.lsp.config("jsonls", {
 					fileMatch = { ".claude/settings.json", ".claude/settings.local.json" },
 					url = "https://www.schemastore.org/claude-code-settings.json",
 				},
+				{
+					fileMatch = { "opencode.json" },
+					url = "https://opencode.ai/config.json",
+				},
 			},
 			validate = { enable = true },
 		},
@@ -43,7 +47,7 @@ return {
 		---@type conform.setupOpts
 		opts = {
 			formatters_by_ft = {
-				json = { "deno_fmt" },
+				json = { "prettierd" },
 			},
 		},
 	},
