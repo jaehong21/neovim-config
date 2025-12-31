@@ -1,17 +1,17 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/pyright.lua
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/ty.lua
--- vim.lsp.enable("pyright")
-vim.lsp.enable("ty")
+vim.lsp.enable("pyright")
+-- vim.lsp.enable("ty")
 
--- vim.lsp.config("pyright", {
--- 	settings = {
--- 		python = {
--- 			analysis = {
--- 				typeCheckingMode = "off",
--- 			},
--- 		},
--- 	},
--- })
+vim.lsp.config("pyright", {
+	settings = {
+		python = {
+			analysis = {
+				typeCheckingMode = "off",
+			},
+		},
+	},
+})
 
 return {
 	{
