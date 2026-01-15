@@ -13,7 +13,7 @@ return {
 		end,
 	},
 
-	{
+	--[[ {
 		"stevearc/conform.nvim",
 		---@module "conform"
 		---@type conform.setupOpts
@@ -22,7 +22,7 @@ return {
 				markdown = { "prettierd" },
 			},
 		},
-	},
+	}, ]]
 
 	--[[ {
 		"mfussenegger/nvim-lint",
