@@ -74,16 +74,6 @@ return {
 		--- @module "conform"
 		--- @type conform.setupOpts
 		opts = {
-			formatters = {
-				yamlfmt = {
-					-- https://github.com/google/yamlfmt/blob/main/docs/command-usage.md
-					-- https://github.com/google/yamlfmt/blob/main/docs/config-file.md
-					prepend_args = {
-						"-formatter",
-						"retain_line_breaks_single=true,drop_merge_tag=true",
-					},
-				},
-			},
 			formatters_by_ft = {
 				yaml = { "yamlfmt" },
 			},
