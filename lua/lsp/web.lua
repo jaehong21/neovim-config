@@ -4,6 +4,7 @@
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/ts_ls.lua
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/tailwindcss.lua
 -- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/svelte.lua
+-- https://github.com/neovim/nvim-lspconfig/blob/master/lsp/astro.lua
 vim.lsp.enable({
 	"html",
 	"cssls",
@@ -11,6 +12,7 @@ vim.lsp.enable({
 	-- "ts_ls",
 	"tailwindcss",
 	"svelte",
+	"astro",
 })
 
 -- https://zed.dev/docs/languages/typescript#inlay-hints
@@ -67,6 +69,8 @@ return {
 				"javascript",
 				"typescript",
 				"svelte",
+				"astro",
+				"http",
 			})
 		end,
 	},
