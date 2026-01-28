@@ -16,6 +16,7 @@ return {
 				".venv",
 				"__pycache__",
 				"target",
+				".ck",
 			},
 
 			layout = {
