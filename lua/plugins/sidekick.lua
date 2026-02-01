@@ -4,7 +4,7 @@ return {
 		-- add any options here
 		cli = {
 			mux = {
-				backend = "zellij", -- "zellij" | "tmux"
+				backend = "tmux", -- "zellij" | "tmux"
 				enabled = true,
 			},
 		},
