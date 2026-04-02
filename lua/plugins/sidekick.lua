@@ -1,11 +1,37 @@
 return {
 	"folke/sidekick.nvim",
+	---@class sidekick.Config
 	opts = {
-		-- add any options here
+		nes = {
+			enabled = true,
+		},
 		cli = {
+			---@class sidekick.win.Opts
+			win = {
+				layout = "float", ---@type "float"|"left"|"bottom"|"top"|"right"
+				--- Options used when layout is "float"
+				---@type vim.api.keyset.win_config
+				float = {
+					width = 0.9,
+					height = 0.9,
+				},
+				-- Options used when layout is "left"|"bottom"|"top"|"right"
+				---@type vim.api.keyset.win_config
+				split = {
+					width = 80, -- set to 0 for default split width
+					height = 20, -- set to 0 for default split height
+				},
+			},
+			---@class sidekick.cli.Mux
 			mux = {
-				backend = "tmux", -- "zellij" | "tmux"
+				backend = "tmux", ---@type "zellij" | "tmux"
 				enabled = true,
+			},
+			---@type table<string, sidekick.cli.Config|{}>
+			tools = {
+				claude = {
+					cmd = { "claude", "--dangerously-skip-permissions" },
+				},
 			},
 		},
 	},
@@ -69,10 +95,10 @@ return {
 			desc = "Sidekick Select Prompt",
 		},
 		-- Example of a keybinding to open Claude directly
-		-- {
-		-- 	"<leader>ac",
-		-- 	function() require("sidekick.cli").toggle({ name = "claude", focus = true }) end,
-		-- 	desc = "Sidekick Toggle Claude",
-		-- },
+		{
+			"<leader>ac",
+			function() require("sidekick.cli").toggle({ name = "claude", focus = true }) end,
+			desc = "Sidekick Toggle Claude",
+		},
 	},
 }
