@@ -1,12 +1,24 @@
 return {
 	"folke/flash.nvim",
-	enabled = false,
 	event = "VeryLazy",
-	---@module "flash"
 	---@type Flash.Config
-	---@diagnostic disable-next-line: missing-fields
-	opts = {},
+	opts = {
+		search = {
+			incremental = false,
+		},
+		label = {
+			uppercase = false,
+			rainbow = {
+				enabled = true,
+			},
+		},
+		modes = {
+			char = {
+				enabled = false,
+			},
+		},
+	},
 	keys = {
-		{ "F", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "[F]lash" },
+		{ "f", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
 	},
 }
