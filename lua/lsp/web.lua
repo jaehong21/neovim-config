@@ -68,6 +68,7 @@ return {
 				"scss",
 				"javascript",
 				"typescript",
+				"tsx",
 				"svelte",
 				"astro",
 				"http",
