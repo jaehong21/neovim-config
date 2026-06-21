@@ -15,8 +15,8 @@ return {
 				"node_modules",
 				".venv",
 				"__pycache__",
+				".ruff_cache",
 				"target",
-				".ck",
 			},
 
 			layout = {
